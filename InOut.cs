@@ -48,7 +48,7 @@ namespace Public
                         name.Length > subdir.Name.Length + 1 &&
                         name.StartsWith(subdir.Name) &&
                         (name[subdir.Name.Length] == '\\' || name[subdir.Name.Length] == '/'))
-                    .Select(name => name[(subdir.Name.Length + 1)..]).ToList();
+                    .Select(name => name.Substring(subdir.Name.Length + 1)).ToList();
                 DirectoryCopy(subdir.FullName, tempPath, excludes, true, overwrite);
             }
         }
