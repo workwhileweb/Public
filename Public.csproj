@@ -12,6 +12,7 @@
     <PackageIcon>favicon.png</PackageIcon>
     <PackageIconUrl />
     <PackageId>wWw.Public</PackageId>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
