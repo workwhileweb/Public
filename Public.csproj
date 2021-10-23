@@ -11,6 +11,7 @@
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <PackageIcon>favicon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageId>wWw.Public</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
