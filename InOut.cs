@@ -18,6 +18,7 @@ namespace Public
         /// <param name="excludeNames"></param>
         /// <param name="copySubDirs"></param>
         /// <param name="overwrite"></param>
+        // ReSharper disable once UnusedMember.Global
         public static void DirectoryCopy(
             string sourceDirName,
             string destDirName,

@@ -12,6 +12,7 @@ namespace Public
         /// <summary>
         /// //TODO : loại bỏ call init ở đầu hàm main mà vẫn handle được exception
         /// </summary>
+        // ReSharper disable once UnusedMember.Global
         public static void Init()
         {
             var currentDomain = AppDomain.CurrentDomain;

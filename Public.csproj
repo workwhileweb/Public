@@ -13,6 +13,8 @@
     <PackageIconUrl />
     <PackageId>wWw.Public</PackageId>
     <Version>1.0.2</Version>
+    <PackageReleaseNotes>workwhileweb/Public</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
