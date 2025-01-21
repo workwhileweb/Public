@@ -21,9 +21,8 @@
 #### Giai đoạn 1: Khởi động 🚀
 
 1. **Nghiên cứu và phát triển:**
-   - Phát triển API backend bằng Python (nhận diện biển số, biển báo, đèn giao thông).
-   - Sử dụng KV Database và cronjob của Deno để lưu trữ và quản lý dữ liệu.
-   - Tích hợp Flutter cho Android.
+   - xong web
+   - xong app
 
 2. **Ra mắt ứng dụng:**
    - Xuất bản trên Apple App Store và Google Play Store. 📱
