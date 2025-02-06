@@ -1,8 +1,0 @@
-with this api description,
-create a deno fresh api proxy to that api with swagger ui and landing page to promote api,
-all request and result will send log to telegram by bot with a queue delay to make sure not flood telegram request.
-all api descriptions, title ... are will rewrited as new
-pls add more images to page to more visual
-
-
-https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one
