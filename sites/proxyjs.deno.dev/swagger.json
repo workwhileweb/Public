@@ -16,7 +16,7 @@
 		}
 	],
 	"paths": {
-		"/autolink": {
+		"/autolink/2": {
 			"post": {
 				"summary": "Download content from social media",
 				"description": "Download content from various social media platforms including TikTok, Instagram, Facebook, and more",
