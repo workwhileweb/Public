@@ -1,0 +1,46 @@
+{
+	"siteTitle": "Social Media Downloader API",
+	"pricingPlans": [
+		{
+			"title": "Basic",
+			"price": "$0",
+			"features": [
+				"100 requests/month",
+				"1 request/second",
+				"Basic support"
+			],
+			"link": "https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one"
+		},
+		{
+			"title": "Pro",
+			"price": "$9",
+			"features": [
+				"160,000 requests/month",
+				"3 requests/second",
+				"Priority support"
+			],
+			"link": "https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one"
+		},
+		{
+			"title": "Ultra",
+			"price": "$26",
+			"features": [
+				"620,000 requests/month",
+				"5 requests/second",
+				"Premium support"
+			],
+			"isPopular": true,
+			"link": "https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one"
+		},
+		{
+			"title": "Mega",
+			"price": "$58",
+			"features": [
+				"1,600,000 requests/month",
+				"6 requests/second",
+				"Enterprise support"
+			],
+			"link": "https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one"
+		}
+	]
+}

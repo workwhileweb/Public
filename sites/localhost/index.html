@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Downloader API 1</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white"
+    >
+      <!-- Hero Section -->
+      <div class="container mx-auto px-4 py-20 text-center">
+        <h1 class="text-6xl font-bold mb-6" id="siteTitle">
+          Social Media Downloader API
+        </h1>
+        <p class="text-xl mb-8">
+          Download content from 40+ social media platforms with a single API
+        </p>
+        <div class="flex justify-center gap-4">
+          <a
+            href="/docs"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition"
+          >
+            API Documentation
+          </a>
+          <a
+            href="https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one"
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition"
+          >
+            Get API Key
+          </a>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Supported Platforms
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fab fa-tiktok text-4xl mb-4 text-blue-500"></i>
+            <h3 class="text-xl font-bold mb-2">TikTok</h3>
+            <p class="text-gray-400">
+              Download TikTok videos without watermark
+            </p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fab fa-instagram text-4xl mb-4 text-blue-500"></i>
+            <h3 class="text-xl font-bold mb-2">Instagram</h3>
+            <p class="text-gray-400">Download posts, stories, and reels</p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fab fa-facebook text-4xl mb-4 text-blue-500"></i>
+            <h3 class="text-xl font-bold mb-2">Facebook</h3>
+            <p class="text-gray-400">Download videos and photos</p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fab fa-youtube text-4xl mb-4 text-blue-500"></i>
+            <h3 class="text-xl font-bold mb-2">YouTube</h3>
+            <p class="text-gray-400">Download videos in various qualities</p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fab fa-twitter text-4xl mb-4 text-blue-500"></i>
+            <h3 class="text-xl font-bold mb-2">Twitter</h3>
+            <p class="text-gray-400">Download tweets and media</p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-play-circle text-4xl mb-4 text-blue-500"></i>
+            <h3 class="text-xl font-bold mb-2">40+ More</h3>
+            <p class="text-gray-400">Support for many other platforms</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12">Why Choose Us?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-bolt text-4xl mb-4 text-green-500"></i>
+            <h3 class="text-xl font-bold mb-2">Fast Processing</h3>
+            <p class="text-gray-400">
+              Quick response times and efficient downloads
+            </p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-shield-alt text-4xl mb-4 text-green-500"></i>
+            <h3 class="text-xl font-bold mb-2">Reliable</h3>
+            <p class="text-gray-400">High uptime and stable service</p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-code text-4xl mb-4 text-green-500"></i>
+            <h3 class="text-xl font-bold mb-2">Easy Integration</h3>
+            <p class="text-gray-400">
+              Simple REST API with clear documentation
+            </p>
+          </div>
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-headset text-4xl mb-4 text-green-500"></i>
+            <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+            <p class="text-gray-400">Technical support when you need it</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Section -->
+      <div class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12">Pricing Plans</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Basic Plan -->
+          <div class="bg-gray-800 p-6 rounded-lg text-center relative">
+            <h3 class="text-xl font-bold mb-2">Basic</h3>
+            <p class="text-3xl font-bold mb-4">
+              $9.99<span class="text-sm text-gray-400">/month</span>
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li class="text-gray-400">1,000 API calls/month</li>
+              <li class="text-gray-400">5 requests/second</li>
+              <li class="text-gray-400">Basic support</li>
+              <li class="text-gray-400">10 platforms supported</li>
+            </ul>
+            <a
+              href="https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one/pricing"
+              class="block w-full py-2 px-4 rounded bg-gray-700 hover:bg-gray-600 transition"
+            >
+              Choose Plan
+            </a>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="bg-gray-800 p-6 rounded-lg text-center relative">
+            <h3 class="text-xl font-bold mb-2">Pro</h3>
+            <p class="text-3xl font-bold mb-4">
+              $24.99<span class="text-sm text-gray-400">/month</span>
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li class="text-gray-400">5,000 API calls/month</li>
+              <li class="text-gray-400">10 requests/second</li>
+              <li class="text-gray-400">Priority support</li>
+              <li class="text-gray-400">25 platforms supported</li>
+            </ul>
+            <a
+              href="https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one/pricing"
+              class="block w-full py-2 px-4 rounded bg-gray-700 hover:bg-gray-600 transition"
+            >
+              Choose Plan
+            </a>
+          </div>
+
+          <!-- Business Plan -->
+          <div
+            class="bg-gray-800 p-6 rounded-lg text-center relative ring-2 ring-blue-500"
+          >
+            <span
+              class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 text-sm rounded-bl rounded-tr"
+            >
+              Popular
+            </span>
+            <h3 class="text-xl font-bold mb-2">Business</h3>
+            <p class="text-3xl font-bold mb-4">
+              $49.99<span class="text-sm text-gray-400">/month</span>
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li class="text-gray-400">15,000 API calls/month</li>
+              <li class="text-gray-400">20 requests/second</li>
+              <li class="text-gray-400">24/7 priority support</li>
+              <li class="text-gray-400">All platforms supported</li>
+            </ul>
+            <a
+              href="https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one/pricing"
+              class="block w-full py-2 px-4 rounded bg-blue-500 hover:bg-blue-600 transition"
+            >
+              Choose Plan
+            </a>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="bg-gray-800 p-6 rounded-lg text-center relative">
+            <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+            <p class="text-3xl font-bold mb-4">
+              $99.99<span class="text-sm text-gray-400">/month</span>
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li class="text-gray-400">50,000 API calls/month</li>
+              <li class="text-gray-400">Unlimited requests/second</li>
+              <li class="text-gray-400">Custom support SLA</li>
+              <li class="text-gray-400">Custom solutions</li>
+            </ul>
+            <a
+              href="https://rapidapi.com/nguyenmanhict-MuTUtGWD7K/api/auto-download-all-in-one/pricing"
+              class="block w-full py-2 px-4 rounded bg-gray-700 hover:bg-gray-600 transition"
+            >
+              Choose Plan
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 text-center">
+          <p class="text-gray-400">
+            © 2024 Social Media Downloader API. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

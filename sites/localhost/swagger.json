@@ -1,0 +1,294 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Social Media Downloader API",
+		"description": "API for downloading content from various social media platforms and managing API configurations",
+		"version": "1.0.0",
+		"contact": {
+			"name": "API Support",
+			"url": "https://j2download.com"
+		}
+	},
+	"servers": [
+		{
+			"url": "/api",
+			"description": "API Server"
+		}
+	],
+	"paths": {
+		"/configs": {
+			"get": {
+				"summary": "List all configs",
+				"description": "Retrieve a list of all API configurations",
+				"responses": {
+					"200": {
+						"description": "List of configurations",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Config"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Create a new config",
+				"description": "Add a new API configuration",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Config"
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Config created successfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Config"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/configs/{name}": {
+			"put": {
+				"summary": "Update a config",
+				"description": "Update an existing API configuration",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"description": "Name of the config to update"
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Config"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Config updated successfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Config"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Config not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"summary": "Delete a config",
+				"description": "Delete an existing API configuration",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"description": "Name of the config to delete"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Config deleted successfully"
+					},
+					"404": {
+						"description": "Config not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/social/autolink": {
+			"post": {
+				"summary": "Download content from social media",
+				"description": "Download content from various social media platforms including TikTok, Instagram, Facebook, and more",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"required": [
+									"url"
+								],
+								"properties": {
+									"url": {
+										"type": "string",
+										"description": "URL of the content to download"
+									},
+									"cookie": {
+										"type": "string",
+										"description": "Optional cookie for private content"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"url": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										},
+										"author": {
+											"type": "string"
+										},
+										"title": {
+											"type": "string"
+										},
+										"thumbnail": {
+											"type": "string"
+										},
+										"duration": {
+											"type": "string"
+										},
+										"medias": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"url": {
+														"type": "string"
+													},
+													"quality": {
+														"type": "string"
+													},
+													"extension": {
+														"type": "string"
+													},
+													"type": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Config": {
+				"type": "object",
+				"required": [
+					"name",
+					"host",
+					"path",
+					"key"
+				],
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "Unique identifier for the config"
+					},
+					"host": {
+						"type": "string",
+						"description": "API host domain"
+					},
+					"path": {
+						"type": "string",
+						"description": "API endpoint path"
+					},
+					"key": {
+						"type": "string",
+						"description": "API key header name"
+					},
+					"required": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "Required fields for the API request"
+					}
+				}
+			},
+			"Error": {
+				"type": "object",
+				"properties": {
+					"error": {
+						"type": "string",
+						"description": "Error message"
+					}
+				}
+			}
+		}
+	}
+}
