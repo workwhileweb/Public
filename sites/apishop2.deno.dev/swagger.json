@@ -1,0 +1,330 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Social Media Downloader API",
+		"description": "A powerful API for downloading content from various social media platforms. Features include watermark-free downloads, high-quality media extraction, and support for private content with authentication.",
+		"version": "1.0.0",
+		"contact": {
+			"name": "API Support",
+			"url": "https://proxyjs.deno.dev/",
+			"email": "support@example.com"
+		},
+		"termsOfService": "https://example.com/terms",
+		"license": {
+			"name": "MIT",
+			"url": "https://opensource.org/licenses/MIT"
+		}
+	},
+	"servers": [
+		{
+			"url": "/api",
+			"description": "Production API Server"
+		},
+		{
+			"url": "/api/sandbox",
+			"description": "Sandbox Environment"
+		}
+	],
+	"tags": [
+		{
+			"name": "downloads",
+			"description": "Content download operations"
+		},
+		{
+			"name": "account",
+			"description": "Account management operations"
+		},
+		{
+			"name": "analytics",
+			"description": "Usage analytics and statistics"
+		}
+	],
+	"paths": {
+		"/autolink/2": {
+			"post": {
+				"tags": [
+					"downloads"
+				],
+				"summary": "Download content from social media",
+				"description": "Download content from various social media platforms including TikTok, Instagram, Facebook, and more. Supports watermark-free downloads and private content access.",
+				"operationId": "downloadContent",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"required": [
+									"url"
+								],
+								"properties": {
+									"url": {
+										"type": "string",
+										"description": "URL of the content to download",
+										"example": "https://www.tiktok.com/@user/video/1234567890"
+									},
+									"cookie": {
+										"type": "string",
+										"description": "Optional cookie for private content access",
+										"example": "sessionid=abc123..."
+									},
+									"quality": {
+										"type": "string",
+										"description": "Desired quality of the download",
+										"enum": [
+											"high",
+											"medium",
+											"low"
+										],
+										"default": "high"
+									},
+									"format": {
+										"type": "string",
+										"description": "Desired format of the download",
+										"enum": [
+											"mp4",
+											"mp3",
+											"jpg"
+										],
+										"default": "mp4"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"url": {
+											"type": "string",
+											"description": "Original content URL"
+										},
+										"source": {
+											"type": "string",
+											"description": "Platform source (e.g., 'tiktok', 'instagram')"
+										},
+										"author": {
+											"type": "object",
+											"properties": {
+												"id": {
+													"type": "string",
+													"description": "Author's platform ID"
+												},
+												"username": {
+													"type": "string",
+													"description": "Author's username"
+												},
+												"nickname": {
+													"type": "string",
+													"description": "Author's display name"
+												}
+											}
+										},
+										"title": {
+											"type": "string",
+											"description": "Content title or caption"
+										},
+										"thumbnail": {
+											"type": "string",
+											"description": "Thumbnail URL"
+										},
+										"duration": {
+											"type": "string",
+											"description": "Content duration (for videos)"
+										},
+										"medias": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"url": {
+														"type": "string",
+														"description": "Download URL"
+													},
+													"quality": {
+														"type": "string",
+														"description": "Media quality"
+													},
+													"extension": {
+														"type": "string",
+														"description": "File extension"
+													},
+													"type": {
+														"type": "string",
+														"description": "Media type (video/image/audio)"
+													},
+													"size": {
+														"type": "integer",
+														"description": "File size in bytes"
+													},
+													"width": {
+														"type": "integer",
+														"description": "Media width in pixels"
+													},
+													"height": {
+														"type": "integer",
+														"description": "Media height in pixels"
+													}
+												}
+											}
+										},
+										"statistics": {
+											"type": "object",
+											"properties": {
+												"likes": {
+													"type": "integer",
+													"description": "Number of likes"
+												},
+												"comments": {
+													"type": "integer",
+													"description": "Number of comments"
+												},
+												"shares": {
+													"type": "integer",
+													"description": "Number of shares"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized - Invalid API key",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Forbidden - Rate limit exceeded",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Content not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/account/usage": {
+			"get": {
+				"tags": [
+					"analytics"
+				],
+				"summary": "Get API usage statistics",
+				"description": "Retrieve detailed usage statistics for your API account",
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"requests": {
+											"type": "object",
+											"properties": {
+												"total": {
+													"type": "integer",
+													"description": "Total number of requests"
+												},
+												"successful": {
+													"type": "integer",
+													"description": "Number of successful requests"
+												},
+												"failed": {
+													"type": "integer",
+													"description": "Number of failed requests"
+												}
+											}
+										},
+										"bandwidth": {
+											"type": "object",
+											"properties": {
+												"total": {
+													"type": "integer",
+													"description": "Total bandwidth used (bytes)"
+												},
+												"limit": {
+													"type": "integer",
+													"description": "Bandwidth limit (bytes)"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Error": {
+				"type": "object",
+				"properties": {
+					"error": {
+						"type": "string",
+						"description": "Error message"
+					},
+					"code": {
+						"type": "string",
+						"description": "Error code"
+					},
+					"details": {
+						"type": "object",
+						"description": "Additional error details"
+					}
+				}
+			}
+		},
+		"securitySchemes": {
+			"apiKey": {
+				"type": "apiKey",
+				"name": "X-API-Key",
+				"in": "header",
+				"description": "API key for authentication"
+			}
+		}
+	},
+	"security": [
+		{
+			"apiKey": []
+		}
+	]
+}

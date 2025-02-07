@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediaGrabber Pro - Ultimate Social Media Content Downloader</title>
+    <meta name="description" content="Download high-quality content from 40+ social media platforms including TikTok, Instagram, Facebook, YouTube & more. Fast, reliable, and watermark-free downloads." />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 text-white"
+    >
+      <!-- Hero Section -->
+      <div class="container mx-auto px-4 py-20 text-center relative">
+        <!-- Background Pattern -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+          <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <pattern id="grid-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+              </pattern>
+              <linearGradient id="hero-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4F46E5"/>
+                <stop offset="50%" stop-color="#9333EA"/>
+                <stop offset="100%" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grid-pattern)"></path>
+          </svg>
+        </div>
+        
+        <!-- Floating Icons Animation -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="absolute w-20 h-20 -top-10 left-1/4 animate-float">
+            <svg class="w-full h-full text-blue-500 opacity-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+            </svg>
+          </div>
+          <div class="absolute w-16 h-16 top-1/3 right-1/4 animate-float-delayed">
+            <svg class="w-full h-full text-pink-500 opacity-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z"/>
+              <path d="M12 6a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Main Hero Content -->
+        <div class="relative z-10">
+          <h1 class="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400" id="siteTitle">
+            MediaGrabber Pro
+          </h1>
+          <p class="text-2xl mb-4 text-gray-200">
+            The Ultimate Social Media Content Downloader
+          </p>
+          <p class="text-xl mb-8 text-gray-300 max-w-3xl mx-auto">
+            Download high-quality videos, photos, and stories from 40+ platforms. Fast, reliable, and watermark-free.
+            Perfect for content creators, marketers, and social media enthusiasts.
+          </p>
+          <div class="flex justify-center gap-6">
+            <a
+              href="./docs"
+              class="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              API Documentation
+            </a>
+            <a
+              href="https://rapidapi.com/"
+              class="group bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+              </svg>
+              Get API Key
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="container mx-auto px-4 py-16">
+        <h2
+          class="text-4xl font-bold text-center mb-12 text-gradient bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+        >
+          Supported Platforms
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- TikTok -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition-all duration-300 shadow-lg border border-gray-700/30 group hover:scale-105"
+          >
+            <div class="relative mb-6">
+              <svg class="w-20 h-20 mx-auto text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.43v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 015.2-2.32V6.54a7.29 7.29 0 006.59 1.5v-3.1z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">TikTok</h3>
+            <p class="text-gray-300 mb-4">
+              Download TikTok videos without watermark. Support for trending videos, user uploads, and hashtag challenges.
+            </p>
+            <ul class="text-gray-400 space-y-2 text-sm">
+              <li>✓ Watermark-free downloads</li>
+              <li>✓ High-quality video</li>
+              <li>✓ Music extraction</li>
+            </ul>
+          </div>
+
+          <!-- Instagram -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition-all duration-300 shadow-lg border border-gray-700/30 group hover:scale-105"
+          >
+            <div class="relative mb-6">
+              <svg class="w-20 h-20 mx-auto text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Instagram</h3>
+            <p class="text-gray-300 mb-4">
+              Download Instagram posts, stories, reels, and IGTV videos in original quality.
+            </p>
+            <ul class="text-gray-400 space-y-2 text-sm">
+              <li>✓ Stories & Highlights</li>
+              <li>✓ Reels & IGTV</li>
+              <li>✓ Carousel Posts</li>
+            </ul>
+          </div>
+
+          <!-- Facebook -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition-all duration-300 shadow-lg border border-gray-700/30 group hover:scale-105"
+          >
+            <div class="relative mb-6">
+              <svg class="w-20 h-20 mx-auto text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Facebook</h3>
+            <p class="text-gray-300 mb-4">
+              Download Facebook videos, photos, and stories from public and private profiles.
+            </p>
+            <ul class="text-gray-400 space-y-2 text-sm">
+              <li>✓ HD Video Quality</li>
+              <li>✓ Live Stream Recording</li>
+              <li>✓ Group Content</li>
+            </ul>
+          </div>
+
+          <!-- YouTube -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition-all duration-300 shadow-lg border border-gray-700/30 group hover:scale-105"
+          >
+            <div class="relative mb-6">
+              <svg class="w-20 h-20 mx-auto text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-500 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">YouTube</h3>
+            <p class="text-gray-300 mb-4">
+              Download YouTube videos and shorts in multiple formats and qualities.
+            </p>
+            <ul class="text-gray-400 space-y-2 text-sm">
+              <li>✓ 4K Resolution Support</li>
+              <li>✓ Audio Extraction</li>
+              <li>✓ Subtitle Download</li>
+            </ul>
+          </div>
+
+          <!-- Twitter -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition-all duration-300 shadow-lg border border-gray-700/30 group hover:scale-105"
+          >
+            <div class="relative mb-6">
+              <svg class="w-20 h-20 mx-auto text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Twitter</h3>
+            <p class="text-gray-300 mb-4">
+              Download Twitter videos, GIFs, and images in original quality.
+            </p>
+            <ul class="text-gray-400 space-y-2 text-sm">
+              <li>✓ Space Recordings</li>
+              <li>✓ GIF Conversion</li>
+              <li>✓ Thread Archiving</li>
+            </ul>
+          </div>
+
+          <!-- More Platforms -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition-all duration-300 shadow-lg border border-gray-700/30 group hover:scale-105"
+          >
+            <div class="relative mb-6">
+              <svg class="w-20 h-20 mx-auto text-violet-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="10" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="9" y1="9" x2="9.01" y2="9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="15" y1="9" x2="15.01" y2="9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-600 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">40+ More Platforms</h3>
+            <p class="text-gray-300 mb-4">
+              Support for dozens more social media platforms and content types.
+            </p>
+            <ul class="text-gray-400 space-y-2 text-sm">
+              <li>✓ Reddit & Pinterest</li>
+              <li>✓ Vimeo & Dailymotion</li>
+              <li>✓ LinkedIn & Snapchat</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits Section with new design -->
+      <div class="container mx-auto px-4 py-16">
+        <h2
+          class="text-4xl font-bold text-center mb-12 text-gradient bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+        >
+          Why Choose Us?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition shadow-lg border border-gray-700/30"
+          >
+            <div class="relative">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-pink-500"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Fast Processing</h3>
+            <p class="text-gray-400">
+              Quick response times and efficient downloads
+            </p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition shadow-lg border border-gray-700/30"
+          >
+            <div class="relative">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-pink-500"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Reliable</h3>
+            <p class="text-gray-400">High uptime and stable service</p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition shadow-lg border border-gray-700/30"
+          >
+            <div class="relative">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-pink-500"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Easy Integration</h3>
+            <p class="text-gray-400">
+              Simple REST API with clear documentation
+            </p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-lg text-center hover:from-gray-700/50 hover:to-gray-800/50 transition shadow-lg border border-gray-700/30"
+          >
+            <div class="relative">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-pink-500"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+            <p class="text-gray-400">Technical support when you need it</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Statistics Section -->
+      <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-pink-500 mb-2">1M+</div>
+            <div class="text-gray-300">Daily Downloads</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-purple-500 mb-2">99.9%</div>
+            <div class="text-gray-300">Uptime</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-indigo-500 mb-2">40+</div>
+            <div class="text-gray-300">Platforms</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-violet-500 mb-2">24/7</div>
+            <div class="text-gray-300">Support</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Section with enhanced design -->
+      <div class="container mx-auto px-4 py-16">
+        <h2
+          class="text-4xl font-bold text-center mb-12 text-gradient bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+        >
+          Pricing Plans
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Basic Plan -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-lg text-center relative"
+          >
+            <h3 class="text-xl font-bold mb-2">Basic</h3>
+            <p class="text-3xl font-bold mb-4">
+              $9.99<span class="text-sm text-gray-400">/month</span>
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li class="text-gray-400">1,000 API calls/month</li>
+              <li class="text-gray-400">5 requests/second</li>
+              <li class="text-gray-400">Basic support</li>
+              <li class="text-gray-400">10 platforms supported</li>
+            </ul>
+            <a
+              href="https://rapidapi.com/"
+              class="block w-full py-2 px-4 rounded bg-gray-700 hover:bg-gray-600 transition"
+            >
+              Choose Plan
+            </a>
+          </div>
+
+          <!-- Pro Plan -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-lg text-center relative"
+          >
+            <h3 class="text-xl font-bold mb-2">Pro</h3>
+            <p class="text-3xl font-bold mb-4">
+              $24.99<span class="text-sm text-gray-400">/month</span>
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li class="text-gray-400">5,000 API calls/month</li>
+              <li class="text-gray-400">10 requests/second</li>
+              <li class="text-gray-400">Priority support</li>
+              <li class="text-gray-400">25 platforms supported</li>
+            </ul>
+            <a
+              href="https://rapidapi.com/"
+              class="block w-full py-2 px-4 rounded bg-gray-700 hover:bg-gray-600 transition"
+            >
+              Choose Plan
+            </a>
+          </div>
+
+          <!-- Business Plan -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-lg text-center relative ring-2 ring-blue-500"
+          >
+            <span
+              class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 text-sm rounded-bl rounded-tr"
+            >
+              Popular
+            </span>
+            <h3 class="text-xl font-bold mb-2">Business</h3>
+            <p class="text-3xl font-bold mb-4">
+              $49.99<span class="text-sm text-gray-400">/month</span>
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li class="text-gray-400">15,000 API calls/month</li>
+              <li class="text-gray-400">20 requests/second</li>
+              <li class="text-gray-400">24/7 priority support</li>
+              <li class="text-gray-400">All platforms supported</li>
+            </ul>
+            <a
+              href="https://rapidapi.com/"
+              class="block w-full py-2 px-4 rounded bg-blue-500 hover:bg-blue-600 transition"
+            >
+              Choose Plan
+            </a>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div
+            class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-lg text-center relative"
+          >
+            <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+            <p class="text-3xl font-bold mb-4">
+              $99.99<span class="text-sm text-gray-400">/month</span>
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li class="text-gray-400">50,000 API calls/month</li>
+              <li class="text-gray-400">Unlimited requests/second</li>
+              <li class="text-gray-400">Custom support SLA</li>
+              <li class="text-gray-400">Custom solutions</li>
+            </ul>
+            <a
+              href="https://rapidapi.com/"
+              class="block w-full py-2 px-4 rounded bg-gray-700 hover:bg-gray-600 transition"
+            >
+              Choose Plan
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Footer -->
+      <footer class="bg-gradient-to-r from-indigo-900 to-purple-900 py-12">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">Company</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white">Careers</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4">Resources</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Documentation</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white">Blog</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Changelog</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4">Legal</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-300 hover:text-white"
+                    >Cookie Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4">Connect</h3>
+              <div class="flex space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="text-gray-300 hover:text-white"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a href="#" class="text-gray-300 hover:text-white"
+                  ><i class="fab fa-discord"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center text-gray-400 border-t border-gray-800 pt-8">
+            © 2024 Social Media Downloader API. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4">Connect</h3>
+              <div class="flex space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="text-gray-300 hover:text-white"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a href="#" class="text-gray-300 hover:text-white"
+                  ><i class="fab fa-discord"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center text-gray-400 border-t border-gray-800 pt-8">
+            © 2024 Social Media Downloader API. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

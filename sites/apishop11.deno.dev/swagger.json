@@ -1,0 +1,326 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Social Media Downloader API",
+		"description": "A powerful API service that enables downloading content from 40+ social media platforms including TikTok, Instagram, Facebook, YouTube, Twitter, and more. Our service provides high-quality downloads, fast processing, and reliable uptime.",
+		"version": "1.0.0",
+		"contact": {
+			"name": "API Support",
+			"url": "https://proxyjs.deno.dev/",
+			"email": "support@socialmediadownloader.com"
+		},
+		"termsOfService": "https://socialmediadownloader.com/terms",
+		"license": {
+			"name": "MIT",
+			"url": "https://opensource.org/licenses/MIT"
+		}
+	},
+	"servers": [
+		{
+			"url": "/api",
+			"description": "Production API Server"
+		},
+		{
+			"url": "https://staging-api.socialmediadownloader.com",
+			"description": "Staging API Server"
+		}
+	],
+	"tags": [
+		{
+			"name": "downloads",
+			"description": "Social media content download operations"
+		},
+		{
+			"name": "account",
+			"description": "Account management operations"
+		}
+	],
+	"paths": {
+		"/autolink/2": {
+			"post": {
+				"tags": [
+					"downloads"
+				],
+				"summary": "Download content from social media",
+				"description": "Download content from various social media platforms. Supports videos, images, stories, and more from platforms like TikTok, Instagram, Facebook, YouTube, Twitter, etc.",
+				"operationId": "downloadContent",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"required": [
+									"url"
+								],
+								"properties": {
+									"url": {
+										"type": "string",
+										"description": "URL of the content to download",
+										"example": "https://www.tiktok.com/@username/video/1234567890"
+									},
+									"cookie": {
+										"type": "string",
+										"description": "Optional cookie for accessing private content. Required for private Instagram stories, protected tweets, etc.",
+										"example": "sessionid=abc123..."
+									},
+									"quality": {
+										"type": "string",
+										"description": "Desired quality of the download",
+										"enum": [
+											"high",
+											"medium",
+											"low"
+										],
+										"default": "high"
+									}
+								}
+							},
+							"examples": {
+								"tiktok": {
+									"summary": "TikTok video download",
+									"value": {
+										"url": "https://www.tiktok.com/@username/video/1234567890"
+									}
+								},
+								"instagram": {
+									"summary": "Private Instagram story download",
+									"value": {
+										"url": "https://www.instagram.com/stories/username/1234567890",
+										"cookie": "sessionid=abc123..."
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"url": {
+											"type": "string",
+											"description": "Original content URL"
+										},
+										"source": {
+											"type": "string",
+											"description": "Platform name (e.g., 'tiktok', 'instagram')"
+										},
+										"author": {
+											"type": "object",
+											"properties": {
+												"name": {
+													"type": "string",
+													"description": "Content creator's username"
+												},
+												"avatar": {
+													"type": "string",
+													"description": "Content creator's avatar URL"
+												}
+											}
+										},
+										"title": {
+											"type": "string",
+											"description": "Content title or caption"
+										},
+										"thumbnail": {
+											"type": "string",
+											"description": "Thumbnail image URL"
+										},
+										"duration": {
+											"type": "string",
+											"description": "Content duration (for videos)"
+										},
+										"medias": {
+											"type": "array",
+											"description": "Array of available media files",
+											"items": {
+												"type": "object",
+												"properties": {
+													"url": {
+														"type": "string",
+														"description": "Direct download URL"
+													},
+													"quality": {
+														"type": "string",
+														"description": "Media quality (e.g., '720p', '1080p')"
+													},
+													"extension": {
+														"type": "string",
+														"description": "File extension (e.g., 'mp4', 'jpg')"
+													},
+													"type": {
+														"type": "string",
+														"description": "Media type (e.g., 'video', 'image')"
+													},
+													"size": {
+														"type": "integer",
+														"description": "File size in bytes"
+													},
+													"width": {
+														"type": "integer",
+														"description": "Media width in pixels"
+													},
+													"height": {
+														"type": "integer",
+														"description": "Media height in pixels"
+													}
+												}
+											}
+										}
+									}
+								},
+								"examples": {
+									"tiktok_response": {
+										"summary": "TikTok video response",
+										"value": {
+											"url": "https://www.tiktok.com/@username/video/1234567890",
+											"source": "tiktok",
+											"author": {
+												"name": "username",
+												"avatar": "https://p16-sign.tiktokcdn-us.com/..."
+											},
+											"title": "Check out this amazing video! #viral",
+											"thumbnail": "https://p16-sign.tiktokcdn-us.com/...",
+											"duration": "00:30",
+											"medias": [
+												{
+													"url": "https://download.socialmediadownloader.com/...",
+													"quality": "1080p",
+													"extension": "mp4",
+													"type": "video",
+													"size": 12345678,
+													"width": 1080,
+													"height": 1920
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"example": {
+									"error": "Invalid URL format"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"example": {
+									"error": "Invalid or missing API key"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Forbidden",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"example": {
+									"error": "API quota exceeded"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Not Found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"example": {
+									"error": "Content not found or has been deleted"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "Too Many Requests",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"example": {
+									"error": "Rate limit exceeded. Please try again in 60 seconds."
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal Server Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"example": {
+									"error": "An unexpected error occurred"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Error": {
+				"type": "object",
+				"required": [
+					"error"
+				],
+				"properties": {
+					"error": {
+						"type": "string",
+						"description": "Error message"
+					},
+					"code": {
+						"type": "string",
+						"description": "Error code for programmatic handling"
+					},
+					"details": {
+						"type": "object",
+						"description": "Additional error details"
+					}
+				}
+			}
+		},
+		"securitySchemes": {
+			"apiKey": {
+				"type": "apiKey",
+				"name": "X-API-Key",
+				"in": "header",
+				"description": "API key for authentication"
+			}
+		}
+	},
+	"security": [
+		{
+			"apiKey": []
+		}
+	]
+}

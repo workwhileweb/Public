@@ -1,0 +1,332 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Social Media Downloader API",
+		"description": "A powerful API for downloading content from various social media platforms. Features include high-speed downloads, multiple format support, and comprehensive platform coverage.",
+		"version": "2.0.0",
+		"contact": {
+			"name": "API Support",
+			"url": "https://mediadownpro.com/support",
+			"email": "support@mediadownpro.com"
+		},
+		"termsOfService": "https://mediadownpro.com/terms",
+		"license": {
+			"name": "Apache 2.0",
+			"url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://api.mediadownpro.com/v2",
+			"description": "Production API Server"
+		},
+		{
+			"url": "https://sandbox.mediadownpro.com/v2",
+			"description": "Sandbox API Server"
+		}
+	],
+	"tags": [
+		{
+			"name": "downloads",
+			"description": "Content download operations"
+		},
+		{
+			"name": "account",
+			"description": "Account management operations"
+		},
+		{
+			"name": "analytics",
+			"description": "Usage analytics and statistics"
+		}
+	],
+	"paths": {
+		"/download": {
+			"post": {
+				"tags": [
+					"downloads"
+				],
+				"summary": "Download content from social media",
+				"description": "Download content from various social media platforms including TikTok, Instagram, Facebook, YouTube, and more",
+				"operationId": "downloadContent",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DownloadRequest"
+							},
+							"example": {
+								"url": "https://www.tiktok.com/@username/video/1234567890",
+								"format": "mp4",
+								"quality": "high",
+								"cookie": "optional_auth_cookie"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DownloadResponse"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "Too Many Requests",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/account/usage": {
+			"get": {
+				"tags": [
+					"analytics"
+				],
+				"summary": "Get account usage statistics",
+				"description": "Retrieve detailed usage statistics for your account",
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UsageStats"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"apiKey": []
+					}
+				]
+			}
+		},
+		"/platforms": {
+			"get": {
+				"tags": [
+					"downloads"
+				],
+				"summary": "List supported platforms",
+				"description": "Get a list of all supported social media platforms and their capabilities",
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Platform"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"DownloadRequest": {
+				"type": "object",
+				"required": [
+					"url"
+				],
+				"properties": {
+					"url": {
+						"type": "string",
+						"description": "URL of the content to download"
+					},
+					"format": {
+						"type": "string",
+						"description": "Desired format of the download",
+						"enum": [
+							"mp4",
+							"mp3",
+							"jpg",
+							"gif"
+						],
+						"default": "mp4"
+					},
+					"quality": {
+						"type": "string",
+						"description": "Desired quality of the download",
+						"enum": [
+							"high",
+							"medium",
+							"low"
+						],
+						"default": "high"
+					},
+					"cookie": {
+						"type": "string",
+						"description": "Optional authentication cookie for private content"
+					}
+				}
+			},
+			"DownloadResponse": {
+				"type": "object",
+				"properties": {
+					"url": {
+						"type": "string",
+						"description": "Original content URL"
+					},
+					"download_url": {
+						"type": "string",
+						"description": "Direct download URL"
+					},
+					"source": {
+						"type": "string",
+						"description": "Source platform (e.g., TikTok, Instagram)"
+					},
+					"author": {
+						"type": "string",
+						"description": "Content creator username"
+					},
+					"title": {
+						"type": "string",
+						"description": "Content title or caption"
+					},
+					"thumbnail": {
+						"type": "string",
+						"description": "Thumbnail URL"
+					},
+					"duration": {
+						"type": "string",
+						"description": "Content duration (for videos)"
+					},
+					"size": {
+						"type": "integer",
+						"description": "File size in bytes"
+					},
+					"format": {
+						"type": "string",
+						"description": "File format"
+					},
+					"quality": {
+						"type": "string",
+						"description": "Content quality"
+					},
+					"created_at": {
+						"type": "string",
+						"format": "date-time",
+						"description": "Content creation timestamp"
+					}
+				}
+			},
+			"Platform": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "Platform name"
+					},
+					"supported_formats": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "List of supported download formats"
+					},
+					"features": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "List of supported features"
+					},
+					"url_patterns": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "List of supported URL patterns"
+					}
+				}
+			},
+			"UsageStats": {
+				"type": "object",
+				"properties": {
+					"total_requests": {
+						"type": "integer",
+						"description": "Total number of API requests made"
+					},
+					"remaining_requests": {
+						"type": "integer",
+						"description": "Remaining API requests for current period"
+					},
+					"reset_date": {
+						"type": "string",
+						"format": "date-time",
+						"description": "When the request count will reset"
+					},
+					"platform_usage": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "integer"
+						},
+						"description": "Usage breakdown by platform"
+					}
+				}
+			},
+			"Error": {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string",
+						"description": "Error code"
+					},
+					"message": {
+						"type": "string",
+						"description": "Error message"
+					},
+					"details": {
+						"type": "object",
+						"description": "Additional error details"
+					}
+				}
+			}
+		},
+		"securitySchemes": {
+			"apiKey": {
+				"type": "apiKey",
+				"name": "X-API-Key",
+				"in": "header"
+			}
+		}
+	}
+}

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediaHub Pro - Ultimate Social Media Content Downloader API</title>
+    <meta
+      name="description"
+      content="Professional-grade API service for downloading content from 40+ social media platforms. High-performance, secure, and developer-friendly solution for all your media downloading needs."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 text-white"
+    >
+      <!-- Hero Section with Enhanced SVGs -->
+      <div
+        class="container mx-auto px-4 py-20 text-center relative overflow-hidden"
+      >
+        <!-- Abstract Background SVG -->
+        <div class="absolute inset-0 z-0 opacity-10">
+          <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="b" gradientTransform="rotate(45)">
+                <stop offset="0%" stop-color="#FF6B6B" />
+                <stop offset="100%" stop-color="#4ECDC4" />
+              </linearGradient>
+              <linearGradient id="c" gradientTransform="rotate(135)">
+                <stop offset="0%" stop-color="#A78BFA" />
+                <stop offset="100%" stop-color="#EC4899" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,1000 C200,800 350,750 500,750 C650,750 800,800 1000,1000"
+              fill="url(#b)"
+            />
+            <circle cx="200" cy="200" r="50" fill="url(#c)" opacity="0.5">
+              <animate
+                attributeName="r"
+                values="50;70;50"
+                dur="3s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <circle cx="800" cy="300" r="30" fill="url(#b)" opacity="0.5">
+              <animate
+                attributeName="r"
+                values="30;50;30"
+                dur="4s"
+                repeatCount="indefinite"
+              />
+            </circle>
+          </svg>
+        </div>
+
+        <!-- Floating Elements SVG -->
+        <div class="absolute inset-0 z-0 opacity-20">
+          <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern
+                id="grid"
+                width="40"
+                height="40"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 40 0 L 0 0 0 40"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.1)"
+                  stroke-width="1"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+            <g class="floating-elements">
+              <circle cx="150" cy="150" r="10" fill="#fff">
+                <animate
+                  attributeName="cy"
+                  values="150;130;150"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+              <circle cx="850" cy="200" r="8" fill="#fff">
+                <animate
+                  attributeName="cy"
+                  values="200;180;200"
+                  dur="4s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+              <path d="M500,100 L520,120 L500,140 L480,120 Z" fill="#fff">
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 500 120"
+                  to="360 500 120"
+                  dur="10s"
+                  repeatCount="indefinite"
+                />
+              </path>
+            </g>
+          </svg>
+        </div>
+
+        <div class="relative z-10">
+          <h1
+            class="text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+            id="siteTitle"
+          >
+            MediaHub Pro
+          </h1>
+          <p
+            class="text-3xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-purple-300"
+          >
+            Your Ultimate Social Media Content Downloader
+          </p>
+          <p class="text-xl mb-8 text-gray-200">
+            Access premium content from 40+ social media platforms with our
+            enterprise-grade API.<br />
+            Lightning-fast downloads, advanced features, and unmatched
+            reliability.
+          </p>
+          <div class="flex justify-center gap-6">
+            <a
+              href="./docs"
+              class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105"
+            >
+              <i class="fas fa-book-open mr-2"></i> API Documentation
+            </a>
+            <a
+              href="https://rapidapi.com/"
+              class="bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105"
+            >
+              <i class="fas fa-key mr-2"></i> Get API Key
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Section (New) -->
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl text-center">
+            <div class="text-4xl font-bold text-pink-400">40+</div>
+            <div class="text-gray-300">Platforms Supported</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl text-center">
+            <div class="text-4xl font-bold text-purple-400">99.9%</div>
+            <div class="text-gray-300">Uptime</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl text-center">
+            <div class="text-4xl font-bold text-indigo-400">50ms</div>
+            <div class="text-gray-300">Avg Response Time</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl text-center">
+            <div class="text-4xl font-bold text-violet-400">1M+</div>
+            <div class="text-gray-300">API Calls Daily</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="container mx-auto px-4 py-16">
+        <h2
+          class="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+        >
+          Powerful Platform Support
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 relative group"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <i class="fab fa-tiktok text-5xl mb-4 text-pink-400"></i>
+            <h3 class="text-2xl font-bold mb-3">TikTok</h3>
+            <p class="text-gray-300">
+              Advanced TikTok video downloads with:
+              <ul class="mt-2 text-left text-sm">
+                <li>• Watermark removal</li>
+                <li>• Private video support</li>
+                <li>• Batch processing</li>
+                <li>• Music extraction</li>
+              </ul>
+            </p>
+          </div>
+          
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 relative group"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <i class="fab fa-instagram text-5xl mb-4 text-purple-400"></i>
+            <h3 class="text-2xl font-bold mb-3">Instagram</h3>
+            <p class="text-gray-300">
+              Complete Instagram content suite:
+              <ul class="mt-2 text-left text-sm">
+                <li>• Stories & Highlights</li>
+                <li>• Reels in HD quality</li>
+                <li>• Carousel posts</li>
+                <li>• IGTV videos</li>
+              </ul>
+            </p>
+          </div>
+
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 relative group"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <i class="fab fa-facebook text-5xl mb-4 text-indigo-400"></i>
+            <h3 class="text-2xl font-bold mb-3">Facebook</h3>
+            <p class="text-gray-300">
+              Comprehensive Facebook support:
+              <ul class="mt-2 text-left text-sm">
+                <li>• HD video downloads</li>
+                <li>• Private group content</li>
+                <li>• Live stream recording</li>
+                <li>• Story archiving</li>
+              </ul>
+            </p>
+          </div>
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 relative group"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-red-500/10 to-yellow-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <i class="fab fa-youtube text-5xl mb-4 text-red-400"></i>
+            <h3 class="text-2xl font-bold mb-3">YouTube</h3>
+            <p class="text-gray-300">
+              Premium YouTube features:
+              <ul class="mt-2 text-left text-sm">
+                <li>• 4K/8K quality support</li>
+                <li>• Subtitle extraction</li>
+                <li>• Playlist downloading</li>
+                <li>• Live stream capture</li>
+              </ul>
+            </p>
+          </div>
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 relative group"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <i class="fab fa-twitter text-5xl mb-4 text-blue-400"></i>
+            <h3 class="text-2xl font-bold mb-3">Twitter</h3>
+            <p class="text-gray-300">
+              Complete Twitter toolkit:
+              <ul class="mt-2 text-left text-sm">
+                <li>• High-quality video downloads</li>
+                <li>• Space recordings</li>
+                <li>• GIF extraction</li>
+                <li>• Thread archiving</li>
+              </ul>
+            </p>
+          </div>
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 relative group"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-fuchsia-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <i class="fas fa-globe text-5xl mb-4 text-violet-400"></i>
+            <h3 class="text-2xl font-bold mb-3">40+ More Platforms</h3>
+            <p class="text-gray-300">
+              Extended platform support:
+              <ul class="mt-2 text-left text-sm">
+                <li>• Reddit content</li>
+                <li>• LinkedIn media</li>
+                <li>• Pinterest boards</li>
+                <li>• And many more...</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Example Section (New) -->
+      <div class="container mx-auto px-4 py-16">
+        <h2
+          class="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+        >
+          Simple Integration
+        </h2>
+        <div class="bg-gray-900/50 backdrop-blur-lg p-8 rounded-xl">
+          <div class="text-sm font-mono">
+            <pre class="language-javascript"><code>
+fetch('https://api.example.com/download', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'your-api-key'
+  },
+  body: JSON.stringify({
+    url: 'https://www.tiktok.com/video/123'
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data));
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits Section with Enhanced Visual Elements -->
+      <div class="container mx-auto px-4 py-16 relative">
+        <!-- Animated Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+              <path d="M 50 0 L 0 0 0 50" fill="none" stroke="currentColor" stroke-width="1"/>
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+
+        <h2
+          class="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 relative z-10"
+        >
+          Why Choose MediaHub Pro?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 border border-transparent hover:border-pink-500/20"
+          >
+            <i class="fas fa-bolt text-5xl mb-4 text-pink-400"></i>
+            <h3 class="text-2xl font-bold mb-3">Lightning Fast</h3>
+            <p class="text-gray-300">
+              Optimized infrastructure with global CDN distribution ensuring sub-50ms response times
+            </p>
+          </div>
+
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 border border-transparent hover:border-purple-500/20"
+          >
+            <i class="fas fa-shield-alt text-5xl mb-4 text-purple-400"></i>
+            <h3 class="text-2xl font-bold mb-3">Enterprise-Grade</h3>
+            <p class="text-gray-300">
+              99.9% uptime guarantee with automatic failover and load balancing
+            </p>
+          </div>
+
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 border border-transparent hover:border-indigo-500/20"
+          >
+            <i class="fas fa-code text-5xl mb-4 text-indigo-400"></i>
+            <h3 class="text-2xl font-bold mb-3">Developer-First</h3>
+            <p class="text-gray-300">
+              Comprehensive SDK support with detailed documentation and code examples
+            </p>
+          </div>
+
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center hover:bg-white/20 transition transform hover:scale-105 border border-transparent hover:border-violet-500/20"
+          >
+            <i class="fas fa-headset text-5xl mb-4 text-violet-400"></i>
+            <h3 class="text-2xl font-bold mb-3">24/7 Support</h3>
+            <p class="text-gray-300">
+              Dedicated technical support team with 1-hour response time SLA
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Section -->
+      <div class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Premium Plans</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Basic Plan -->
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center relative group transform transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-pink-500/5 to-transparent rounded-xl"></div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-bold mb-2">Starter</h3>
+              <div class="text-3xl font-bold mb-4">
+                $9.99<span class="text-sm text-gray-400">/month</span>
+              </div>
+              <ul class="mb-6 space-y-3 text-left">
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  1,000 API calls/month
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  5 requests/second
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Email support
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  10 platforms included
+                </li>
+              </ul>
+              <a
+                href="https://rapidapi.com/"
+                class="block w-full py-3 px-4 rounded bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transition transform hover:scale-105"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center relative group transform transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent rounded-xl"></div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-bold mb-2">Professional</h3>
+              <div class="text-3xl font-bold mb-4">
+                $24.99<span class="text-sm text-gray-400">/month</span>
+              </div>
+              <ul class="mb-6 space-y-3 text-left">
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  5,000 API calls/month
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  10 requests/second
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Priority support
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  25 platforms included
+                </li>
+              </ul>
+              <a
+                href="https://rapidapi.com/"
+                class="block w-full py-3 px-4 rounded bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 transition transform hover:scale-105"
+              >
+                Upgrade Now
+              </a>
+            </div>
+          </div>
+
+          <!-- Business Plan -->
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center relative group transform transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/5 to-transparent rounded-xl"></div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-bold mb-2">Business</h3>
+              <div class="text-3xl font-bold mb-4">
+                $99.99<span class="text-sm text-gray-400">/month</span>
+              </div>
+              <ul class="mb-6 space-y-3 text-left">
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  50,000 API calls/month
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  25 requests/second
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  24/7 priority support
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  All platforms included
+                </li>
+              </ul>
+              <a
+                href="https://rapidapi.com/"
+                class="block w-full py-3 px-4 rounded bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 transition transform hover:scale-105"
+              >
+                Contact Sales
+              </a>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl text-center relative group transform transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-violet-500/5 to-transparent rounded-xl"></div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+              <div class="text-3xl font-bold mb-4">
+                Custom<span class="text-sm text-gray-400"> pricing</span>
+              </div>
+              <ul class="mb-6 space-y-3 text-left">
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Unlimited API calls
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Custom rate limits
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Dedicated support team
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <svg class="w-4 h-4 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Custom features
+                </li>
+              </ul>
+              <a
+                href="https://rapidapi.com/"
+                class="block w-full py-3 px-4 rounded bg-gradient-to-r from-violet-500 to-fuchsia-600 hover:from-violet-600 hover:to-fuchsia-700 transition transform hover:scale-105"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <footer class="bg-gray-900/50 backdrop-blur-lg mt-16">
+        <div class="container mx-auto px-4 py-12">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                MediaHub Pro
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Your ultimate solution for social media content downloads. Enterprise-grade API service trusted by developers worldwide.
+              </p>
+              <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold mb-4 text-white">Product</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Features</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Pricing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Documentation</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">API Reference</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold mb-4 text-white">Support</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Help Center</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">API Status</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Enterprise Support</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold mb-4 text-white">Legal</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white transition">Security</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+              <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                © 2024 MediaHub Pro. All rights reserved.
+              </p>
+              <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition text-sm">
+                  Privacy Policy
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition text-sm">
+                  Terms of Service
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition text-sm">
+                  Cookie Settings
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

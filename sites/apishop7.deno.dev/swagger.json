@@ -1,0 +1,313 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Social Media Downloader API",
+		"description": "A powerful API service for downloading content from 40+ social media platforms. Our API provides high-quality downloads, metadata extraction, and support for various content types including videos, images, and stories.",
+		"version": "1.0.0",
+		"contact": {
+			"name": "API Support",
+			"url": "https://proxyjs.deno.dev/",
+			"email": "support@apidownloader.com"
+		},
+		"termsOfService": "https://apidownloader.com/terms",
+		"license": {
+			"name": "MIT",
+			"url": "https://opensource.org/licenses/MIT"
+		}
+	},
+	"servers": [
+		{
+			"url": "/api",
+			"description": "Production API Server"
+		},
+		{
+			"url": "https://staging-api.apidownloader.com",
+			"description": "Staging API Server"
+		}
+	],
+	"tags": [
+		{
+			"name": "downloads",
+			"description": "Content download operations"
+		},
+		{
+			"name": "account",
+			"description": "Account management operations"
+		},
+		{
+			"name": "analytics",
+			"description": "Usage analytics and statistics"
+		}
+	],
+	"paths": {
+		"/autolink/2": {
+			"post": {
+				"tags": [
+					"downloads"
+				],
+				"summary": "Download content from social media",
+				"description": "Download content from various social media platforms including TikTok, Instagram, Facebook, and more. Supports high-quality downloads and metadata extraction.",
+				"operationId": "downloadContent",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"required": [
+									"url"
+								],
+								"properties": {
+									"url": {
+										"type": "string",
+										"description": "URL of the content to download",
+										"example": "https://www.tiktok.com/@username/video/1234567890"
+									},
+									"cookie": {
+										"type": "string",
+										"description": "Optional cookie for private content access",
+										"example": "sessionid=abc123..."
+									},
+									"quality": {
+										"type": "string",
+										"description": "Desired quality of the download",
+										"enum": [
+											"high",
+											"medium",
+											"low"
+										],
+										"default": "high"
+									},
+									"format": {
+										"type": "string",
+										"description": "Desired format of the download",
+										"enum": [
+											"mp4",
+											"mp3",
+											"jpg",
+											"png"
+										],
+										"default": "mp4"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"url": {
+											"type": "string",
+											"description": "Original content URL"
+										},
+										"source": {
+											"type": "string",
+											"description": "Platform name (e.g., TikTok, Instagram)"
+										},
+										"author": {
+											"type": "object",
+											"properties": {
+												"username": {
+													"type": "string",
+													"description": "Content creator's username"
+												},
+												"fullName": {
+													"type": "string",
+													"description": "Content creator's full name"
+												},
+												"profileUrl": {
+													"type": "string",
+													"description": "Content creator's profile URL"
+												}
+											}
+										},
+										"title": {
+											"type": "string",
+											"description": "Content title or caption"
+										},
+										"thumbnail": {
+											"type": "string",
+											"description": "Thumbnail URL"
+										},
+										"duration": {
+											"type": "string",
+											"description": "Content duration (for videos)"
+										},
+										"medias": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"url": {
+														"type": "string",
+														"description": "Download URL"
+													},
+													"quality": {
+														"type": "string",
+														"description": "Quality label"
+													},
+													"extension": {
+														"type": "string",
+														"description": "File extension"
+													},
+													"type": {
+														"type": "string",
+														"description": "Media type (video/image/audio)"
+													},
+													"size": {
+														"type": "integer",
+														"description": "File size in bytes"
+													},
+													"width": {
+														"type": "integer",
+														"description": "Media width in pixels"
+													},
+													"height": {
+														"type": "integer",
+														"description": "Media height in pixels"
+													}
+												}
+											}
+										},
+										"stats": {
+											"type": "object",
+											"properties": {
+												"likes": {
+													"type": "integer",
+													"description": "Number of likes"
+												},
+												"comments": {
+													"type": "integer",
+													"description": "Number of comments"
+												},
+												"shares": {
+													"type": "integer",
+													"description": "Number of shares"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized - Invalid API key",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "Too Many Requests - Rate limit exceeded",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal Server Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/account/usage": {
+			"get": {
+				"tags": [
+					"analytics"
+				],
+				"summary": "Get account usage statistics",
+				"description": "Retrieve detailed usage statistics for your account",
+				"security": [
+					{
+						"ApiKeyAuth": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"apiCalls": {
+											"type": "integer",
+											"description": "Total API calls made"
+										},
+										"remainingQuota": {
+											"type": "integer",
+											"description": "Remaining API calls for the current period"
+										},
+										"resetDate": {
+											"type": "string",
+											"format": "date-time",
+											"description": "When the quota will reset"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Error": {
+				"type": "object",
+				"properties": {
+					"error": {
+						"type": "string",
+						"description": "Error message"
+					},
+					"code": {
+						"type": "string",
+						"description": "Error code"
+					},
+					"details": {
+						"type": "object",
+						"description": "Additional error details"
+					}
+				}
+			}
+		},
+		"securitySchemes": {
+			"ApiKeyAuth": {
+				"type": "apiKey",
+				"in": "header",
+				"name": "X-API-Key"
+			}
+		}
+	}
+}

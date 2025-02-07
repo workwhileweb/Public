@@ -1,0 +1,310 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Social Media Downloader API",
+		"description": "A comprehensive API service for downloading content from 40+ social media platforms. Our API provides high-quality downloads, metadata extraction, and support for various content types including videos, images, stories, and more.",
+		"version": "1.0.0",
+		"contact": {
+			"name": "API Support",
+			"url": "https://proxyjs.deno.dev/",
+			"email": "support@socialmediadownloader.com"
+		},
+		"termsOfService": "https://proxyjs.deno.dev/terms",
+		"license": {
+			"name": "MIT",
+			"url": "https://opensource.org/licenses/MIT"
+		}
+	},
+	"servers": [
+		{
+			"url": "/api",
+			"description": "Production API Server"
+		},
+		{
+			"url": "https://staging-api.socialmediadownloader.com",
+			"description": "Staging API Server"
+		}
+	],
+	"tags": [
+		{
+			"name": "downloads",
+			"description": "Content download operations"
+		},
+		{
+			"name": "metadata",
+			"description": "Content metadata operations"
+		}
+	],
+	"paths": {
+		"/autolink/2": {
+			"post": {
+				"tags": [
+					"downloads"
+				],
+				"summary": "Download content from social media",
+				"description": "Download content from various social media platforms including TikTok, Instagram, Facebook, and more. Supports multiple quality options and formats.",
+				"operationId": "downloadContent",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"required": [
+									"url"
+								],
+								"properties": {
+									"url": {
+										"type": "string",
+										"description": "URL of the content to download",
+										"example": "https://www.tiktok.com/@username/video/1234567890"
+									},
+									"cookie": {
+										"type": "string",
+										"description": "Optional cookie for private content access",
+										"example": "sessionid=abc123..."
+									},
+									"format": {
+										"type": "string",
+										"description": "Preferred format for download",
+										"enum": [
+											"mp4",
+											"mp3",
+											"jpg",
+											"webm"
+										],
+										"default": "mp4"
+									},
+									"quality": {
+										"type": "string",
+										"description": "Preferred quality for video content",
+										"enum": [
+											"highest",
+											"high",
+											"medium",
+											"low"
+										],
+										"default": "high"
+									}
+								}
+							},
+							"examples": {
+								"tiktok": {
+									"summary": "TikTok video download",
+									"value": {
+										"url": "https://www.tiktok.com/@username/video/1234567890"
+									}
+								},
+								"instagram": {
+									"summary": "Private Instagram post",
+									"value": {
+										"url": "https://www.instagram.com/p/ABC123/",
+										"cookie": "sessionid=abc123..."
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"url": {
+											"type": "string",
+											"description": "Original content URL"
+										},
+										"source": {
+											"type": "string",
+											"description": "Platform name (e.g., TikTok, Instagram)"
+										},
+										"author": {
+											"type": "object",
+											"properties": {
+												"username": {
+													"type": "string",
+													"description": "Content creator's username"
+												},
+												"fullName": {
+													"type": "string",
+													"description": "Content creator's full name"
+												},
+												"profileUrl": {
+													"type": "string",
+													"description": "Creator's profile URL"
+												}
+											}
+										},
+										"title": {
+											"type": "string",
+											"description": "Content title or caption"
+										},
+										"thumbnail": {
+											"type": "string",
+											"description": "Thumbnail image URL"
+										},
+										"duration": {
+											"type": "string",
+											"description": "Content duration (for videos)"
+										},
+										"timestamp": {
+											"type": "string",
+											"format": "date-time",
+											"description": "Content creation timestamp"
+										},
+										"medias": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"url": {
+														"type": "string",
+														"description": "Direct download URL"
+													},
+													"quality": {
+														"type": "string",
+														"description": "Media quality label"
+													},
+													"extension": {
+														"type": "string",
+														"description": "File extension"
+													},
+													"type": {
+														"type": "string",
+														"description": "Media type (video/image/audio)"
+													},
+													"size": {
+														"type": "integer",
+														"description": "File size in bytes"
+													},
+													"width": {
+														"type": "integer",
+														"description": "Media width in pixels"
+													},
+													"height": {
+														"type": "integer",
+														"description": "Media height in pixels"
+													}
+												}
+											}
+										}
+									}
+								},
+								"example": {
+									"url": "https://www.tiktok.com/@username/video/1234567890",
+									"source": "TikTok",
+									"author": {
+										"username": "username",
+										"fullName": "User Name",
+										"profileUrl": "https://www.tiktok.com/@username"
+									},
+									"title": "Check out this awesome video! #viral",
+									"thumbnail": "https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/12345678",
+									"duration": "00:30",
+									"timestamp": "2024-01-01T12:00:00Z",
+									"medias": [
+										{
+											"url": "https://download.example.com/video.mp4",
+											"quality": "720p",
+											"extension": "mp4",
+											"type": "video",
+											"size": 12345678,
+											"width": 1280,
+											"height": 720
+										}
+									]
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"example": {
+									"error": "Invalid URL provided",
+									"code": "INVALID_URL",
+									"details": "The provided URL is not from a supported platform"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "Too Many Requests",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal Server Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Error": {
+				"type": "object",
+				"properties": {
+					"error": {
+						"type": "string",
+						"description": "Error message"
+					},
+					"code": {
+						"type": "string",
+						"description": "Error code"
+					},
+					"details": {
+						"type": "string",
+						"description": "Detailed error information"
+					}
+				},
+				"required": [
+					"error"
+				]
+			}
+		},
+		"securitySchemes": {
+			"apiKey": {
+				"type": "apiKey",
+				"name": "X-API-Key",
+				"in": "header",
+				"description": "API key for authentication"
+			}
+		}
+	},
+	"security": [
+		{
+			"apiKey": []
+		}
+	]
+}
