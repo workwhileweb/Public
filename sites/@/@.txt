@@ -1,3 +1,11 @@
+-change main color style and add more content detail of page file index.html, add more svg image for more visualbility
+-rewrite and more detail content for file swagger.json
+-rewrite new content for file readme.md, add more emoji and more detail content
+-change name, title, description and add more detail for content of file index.html, add more svg image for more visualbility
+
+
+
+
 with this api description,
 create a deno fresh api proxy to that api with swagger ui and landing page to promote api,
 all request and result will send log to telegram by bot with a queue delay to make sure not flood telegram request.
