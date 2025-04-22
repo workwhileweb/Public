@@ -1,0 +1,173 @@
+"https://rapidapi.com/gabrielius.u/api/taobao-api
+Taobao API
+API creator
+H-W-H
+subscribers
+116
+subs
+category
+eCommerce
+===pricing
+Basic
+$0.10
+/mo
+Optimal
+50 / Month
+Hard Limit
+Choose This Plan
+Pro
+$20.00
+/mo
+Optimal
+2.000 / Day
++ $0.008
+Choose This Plan
+Ultra
+⭐️
+Recommended
+$50.00
+/mo
+Optimal
+5.000 / Day
++ $0.006
+Choose This Plan
+Mega
+$150.00
+/mo
+Optimal
+15.000 / Day
++ $0.0005
+Choose This Plan
+====
+API Overview
+CUSTOM PLANS AVAILABLE, PM FOR MORE INFO.
+Taobao/Tmall item search API, get recommended items API, search for shops API, get recommended shops API and more...
+Our API is full of awesomeness
+99.99% Uptime
+0.5 s average response time
+Real-time data
+Easily scalable
+Predictable schema
+Responsive support
+Majority of our API's:
+Can be customized.
+Can be upgraded with the information needed.
+Are uniquely developed for YOU.
+These are the basic APIs for Taobao, Tmall. For those who need, advanced versions of APIs are available too. More details in private conversation.
+Item Details Simple: View Documentation Item SKU: View Documentation Items Search: View Documentation
+SCALING IMAGES: All images from all endpoints can be scaled right on the image request from your application to an image by adding something image size you wish to get. Original image from the API response:
+//img.alicdn.com/bao/uploaded/i4/725677994/O1CN01jCiitb28vIjpzHIPh_!!0-item_pic.jpg
+Scaled image after adding image size extension. You would need to add like this: ""_500x500.jpg"", ""_100x100.jpg"", ""_50x50.jpg"", etc.
+//img.alicdn.com/bao/uploaded/i4/725677994/O1CN01jCiitb28vIjpzHIPh_!!0-item_pic.jpg_500x500.jpg
+//img.alicdn.com/bao/uploaded/i4/725677994/O1CN01jCiitb28vIjpzHIPh_!!0-item_pic.jpg_100x100.jpg
+//img.alicdn.com/bao/uploaded/i4/725677994/O1CN01jCiitb28vIjpzHIPh_!!0-item_pic.jpg_50x50.jpg
+ERROR RESPONSE MESSAGES: View Documentation Keep in mind, not all the error messages are relative for usage on this platform. If errors such as 401,402,410 or others, please contact me and will solve this ASAP.
+=====
+api
+GET
+Item Details (Simple Details)
+const url = 'https://taobao-api.p.rapidapi.com/api?api=item_detail_simple&num_iid=681298346857';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'taobao-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Item Description
+const url = 'https://taobao-api.p.rapidapi.com/api?num_iid=681298346857&api=item_desc';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'taobao-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Item Delivery Fee
+const url = 'https://taobao-api.p.rapidapi.com/api?num_iid=576493488103&api=item_fee&sku_id=default&area_id=110000&view_skus=true';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'taobao-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Item SKU Info
+const url = 'https://taobao-api.p.rapidapi.com/api?num_iid=681298346857&api=item_sku';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'taobao-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Items Search (Simple Details)
+const url = 'https://taobao-api.p.rapidapi.com/api?api=item_search&page_size=40&sort=default&q=shoes';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'taobao-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Shops Search (Simple Details)
+const url = 'https://taobao-api.p.rapidapi.com/api?q=adidas&api=shop_search_simple&page=1';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'taobao-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}"

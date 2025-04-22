@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Search & Download MP3 API</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #f7faff 0%, #e3f0ff 100%);
+            color: #222;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 4vw 1.5rem 4vw;
+            background: #fff;
+            border-bottom: 2px solid #e3e3e3;
+        }
+        .hero-info {
+            max-width: 60%;
+        }
+        .hero-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .hero-title svg {
+            width: 2em;
+            height: 2em;
+        }
+        .hero-desc {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .creator {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        .subscribers {
+            font-size: 1rem;
+            color: #0073e6;
+            margin-bottom: 0.5rem;
+        }
+        .category {
+            font-size: 1rem;
+            color: #ff9800;
+            margin-bottom: 0.5rem;
+        }
+        .hero-svg {
+            flex-shrink: 0;
+        }
+        .plans-section {
+            padding: 3rem 4vw 2rem 4vw;
+            background: #f7faff;
+        }
+        .plans-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .plans {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .plan {
+            background: #fff;
+            border-radius: 1.2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+            padding: 2rem 1.5rem;
+            min-width: 230px;
+            max-width: 270px;
+            text-align: center;
+            position: relative;
+        }
+        .plan .plan-emoji {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .plan-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .plan-price {
+            font-size: 1.7rem;
+            color: #0073e6;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .plan-requests,
+        .plan-limit {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .plan-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6em 1.2em;
+            background: #0073e6;
+            color: #fff;
+            border-radius: 0.7em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .plan-btn:hover {
+            background: #005bb5;
+        }
+        .plan.star {
+            border: 2px solid #ffeb3b;
+            box-shadow: 0 4px 30px rgba(255,235,59,0.13);
+        }
+        .plan.star .plan-emoji {
+            font-size: 2.5rem;
+        }
+        .resources {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .resources a {
+            color: #0073e6;
+            text-decoration: underline;
+        }
+        @media (max-width: 700px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-info { max-width: 100%; }
+            .hero-svg { margin-top: 1.5rem; }
+            .plans { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-info">
+            <div class="hero-title">
+                <svg class="hero-svg" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#e53935"/><polygon points="20,16 36,24 20,32" fill="#fff"/></svg>
+                YT Search & Download MP3 <span>🎶</span>
+            </div>
+            <div class="hero-desc">Easily search YouTube videos and download MP3s via API. Fast, reliable, and simple integration for your entertainment needs!</div>
+            <div class="creator">👨‍💻 API creator: <b>DowJs Dev</b></div>
+            <div class="subscribers">🙌 319 subs</div>
+            <div class="category">🏷️ Category: <b>Entertainment</b></div>
+        </div>
+        <div class="hero-svg">
+            <!-- Decorative SVG: Headphones -->
+            <svg width="120" height="120" viewBox="0 0 120 120"><ellipse cx="60" cy="60" rx="55" ry="55" fill="#e3f0ff"/><path d="M30 80 Q30 60 60 60 Q90 60 90 80" stroke="#0073e6" stroke-width="6" fill="none"/><rect x="20" y="75" width="15" height="30" rx="7" fill="#0073e6"/><rect x="85" y="75" width="15" height="30" rx="7" fill="#0073e6"/></svg>
+        </div>
+    </section>
+    <section class="plans-section">
+        <div class="plans-title">💸 Pricing Plans</div>
+        <div class="plans">
+            <div class="plan">
+                <div class="plan-emoji">🆓</div>
+                <div class="plan-name">Basic</div>
+                <div class="plan-price">$0.00/mo</div>
+                <div class="plan-requests">50 requests / month</div>
+                <div class="plan-limit">⏱️ 1000/hr rate limit</div>
+                <a href="#" class="plan-btn">Start Free Plan</a>
+            </div>
+            <div class="plan">
+                <div class="plan-emoji">💼</div>
+                <div class="plan-name">Pro</div>
+                <div class="plan-price">$5.00/mo</div>
+                <div class="plan-requests">100,000 requests / month</div>
+                <div class="plan-limit">⏱️ 5/min rate limit</div>
+                <a href="#" class="plan-btn">Choose This Plan</a>
+            </div>
+            <div class="plan star">
+                <div class="plan-emoji">⭐️</div>
+                <div class="plan-name">Ultra <span style="color:#ffeb3b;">(Recommended)</span></div>
+                <div class="plan-price">$15.00/mo</div>
+                <div class="plan-requests">350,000 requests / month</div>
+                <div class="plan-limit">⏱️ 5/min rate limit</div>
+                <a href="#" class="plan-btn">Choose This Plan</a>
+            </div>
+            <div class="plan">
+                <div class="plan-emoji">🚀</div>
+                <div class="plan-name">Mega</div>
+                <div class="plan-price">$35.00/mo</div>
+                <div class="plan-requests">42,000 requests / day</div>
+                <div class="plan-limit">⏱️ 1/sec rate limit</div>
+                <a href="#" class="plan-btn">Choose This Plan</a>
+            </div>
+        </div>
+    </section>
+    <div class="resources">
+        📄 <b>Resources:</b> <a href="https://rapidapi.com/zayviusdigital/api/yt-search-and-download-mp3" target="_blank">API Home</a> | <a href="#">Terms of Use</a>
+    </div>
+    <footer style="margin-top:3rem; text-align:center; color:#aaa; font-size:0.95rem;">
+        Made with <span style="color:#e53935;">❤</span> by DowJs Dev &middot; 2025
+    </footer>
+</body>
+</html>

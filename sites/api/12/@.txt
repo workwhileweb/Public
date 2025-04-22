@@ -1,0 +1,88 @@
+https://rapidapi.com/joshimuddin8212/api/envato-downloader-api1
+Envato Downloader API.
+API creator
+Joshim Uddin
+subscribers
+639 subs
+category
+Other
+===pricing
+Basic
+$0.00
+/mo
+Requests
+2 / Day
+Hard Limit
+Features
+Customer Support
+Get licence
+Files from envato elements
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$3.50
+/mo
+Requests
+900 / Month
+Hard Limit
+Features
+Customer Support
+Get licence
+Files from envato elements
+Rate Limit
+50 requests per hour
+Choose This Plan
+Ultra
+⭐️
+Recommended
+$7.50
+/mo
+Requests
+1.400 / Month
++ $0.05
+Features
+Customer Support
+Get licence
+Files from envato elements
+Rate Limit
+100 requests per hour
+Choose This Plan
+Mega
+$17.50
+/mo
+Requests
+2.500 / Month
++ $0.05
+Features
+Customer Support
+Get licence
+Files from envato elements
+Rate Limit
+150 requests per hour
+Choose This Plan
+====
+API Overview
+The Envato Downloader API is a simple tool that lets users get files from Envato just by providing a link. When a user sends a link to the API, it will give back two things: 01. The File to Download: This is the main file that the link points to. 02. The License: This is a document that shows the legal rights to use the file. With this API, users don't need to worry about extra steps. They just send a link, and they get everything they need to use the file properly.
+Curious to see what Envato Downloader API. can do for you? Try it out now and explore its features, experiment with different endpoints, and see the results firsthand.
+=====
+api
+POST
+Download Files
+const url = 'https://envato-downloader-api1.p.rapidapi.com/external-api/envato?url=https%3A%2F%2Felements.envato.com%2Fstamp-in-retro-style-on-paper-mockup-template-92H7DVA';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'envato-downloader-api1.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {download: 'true'}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

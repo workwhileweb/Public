@@ -1,0 +1,98 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "YT Search and Download MP3 API",
+    "description": "Easily search YouTube videos and download MP3s via API. Fast, reliable, and simple integration for your entertainment needs!\n\nPricing plans: Basic, Pro, Ultra (Recommended), Mega.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "DowJs Dev",
+      "url": "https://rapidapi.com/zayviusdigital/api/yt-search-and-download-mp3"
+    },
+    "x-subscribers": 319,
+    "x-category": "Entertainment"
+  },
+  "servers": [
+    {
+      "url": "https://rapidapi.com/zayviusdigital/api/yt-search-and-download-mp3"
+    }
+  ],
+  "paths": {
+    "/search": {
+      "get": {
+        "summary": "Search YouTube videos",
+        "description": "Search for YouTube videos by keyword.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Search keyword",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of YouTube videos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": { "type": "string" },
+                          "videoId": { "type": "string" },
+                          "url": { "type": "string", "format": "uri" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download": {
+      "get": {
+        "summary": "Download MP3 from YouTube video",
+        "description": "Download the MP3 audio of a YouTube video by videoId.",
+        "parameters": [
+          {
+            "name": "videoId",
+            "in": "query",
+            "description": "The YouTube video ID to download as MP3",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "MP3 file download link",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "downloadUrl": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

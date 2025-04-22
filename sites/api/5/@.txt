@@ -1,0 +1,190 @@
+https://rapidapi.com/swift-api-swift-api-default/api/chat-gpt26
+Chat GPT
+API creator
+Swift API
+subscribers
+2138 subs
+category
+Artificial Intelligence/Machine Learning
+resources
+Product Website https://swiftapi.pro/
+Terms of Use
+===pricing
+Basic
+$0.00
+/mo
+Tokens
+1.000 / Month
+Hard Limit
+Requests
+10 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$5.00
+/mo
+Tokens
+3.000.000 / Month
+Hard Limit
+Requests
+500.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Ultra
+$30.00
+/mo
+Tokens
+25.000.000 / Month
+Hard Limit
+Requests
+1.000.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Mega
+⭐️
+Recommended
+$75.00
+/mo
+Tokens
+75.000.000 / Month
+Hard Limit
+Requests
+3.000.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+Experience the ChatGPT API with fast responses and affordable prices, most importantly, enjoy a high request rate per second. Plus, it supports Function Calling for even more versatility.
+High Availability and Unlimited Calls for GPT 3.5 Turbo. We provide users with high-quality services at super-low prices. Our API service billing is based on the official method, making it very convenient to track and manage your expenses. Open AI Chat GPT 3.5 Turbo
+Chat Completions API
+Chat models take a list of messages as input and return a model-generated message as output. Although the chat format is designed to make multi-turn conversations easy, it’s just as useful for single-turn tasks without any conversation.
+An example Chat Completions API call looks like the following:
+{
+"messages": [
+{
+"role": "user",
+"content": "Hello"
+},
+{
+"role": "assistant",
+"content": "Hi, How can I assist you?"
+},
+{
+"role": "user",
+"content": "What is the result of 5 + 5?"
+}
+]
+}
+Function calling
+In an API call, you can describe functions and have the model intelligently choose to output a JSON object containing arguments to call one or many functions. The Chat Completions API does not call the function; instead, the model generates JSON that you can use to call the function in your code.
+The latest models (gpt-3.5-turbo-1006 and gpt-4-1106-preview) have been trained to both detect when a function should be called (depending on the input) and to respond with JSON that adheres to the function signature more closely than previous models. With this capability also comes potential risks. We strongly recommend building in user confirmation flows before taking actions that impact the world on behalf of users (sending an email, posting something online, making a purchase, etc).
+Common use cases
+Function calling allows you to more reliably get structured data back from the model. For example, you can:
+Create assistants that answer questions by calling external APIs (e.g., like ChatGPT Plugins)
+e.g., define functions like send_email(to: string, body: string), or get_current_weather(location: string, unit: 'celsius' | 'fahrenheit')
+Convert natural language into API calls
+e.g., convert "Who are my top customers?" to get_customers(min_revenue: int, created_before: string, limit: int) and call your internal API
+Extract structured data from text
+e.g., define a function called extract_data(name: string, birthday: string), or sql_query(query: string)
+...and much more!
+The basic sequence of steps for function calling is as follows:
+Call the model with the user query and a set of functions defined in the functions parameter.
+The model can choose to call one or more functions; if so, the content will be a stringified JSON object adhering to your custom schema (note: the model may hallucinate parameters).
+Parse the string into JSON in your code, and call your function with the provided arguments if they exist.
+Call the model again by appending the function response as a new message, and let the model summarize the results back to the user.
+</html>
+Example of functions description
+> Step 1: Call the model with functions and the user’s input
+{
+"messages": [
+{"role": "user", "content": "What is the weather like in Boston?"}
+],
+"functions": [
+{
+"name": "get_current_weather",
+"description": "Get the current weather in a given location",
+"parameters": {
+"type": "object",
+"properties": {
+"location": {
+"type": "string",
+"description": "The city and state, e.g. San Francisco, CA"
+},
+"unit": {
+"type": "string",
+"enum": ["celsius", "fahrenheit"]
+}
+},
+"required": ["location"]
+}
+}
+]
+}
+> Step 2: Use the model response to call your API
+{ "temperature": 22, "unit": "celsius", "description": "Sunny" }
+> Step 3: Send the response back to the model to summarize
+{
+"messages": [
+{"role": "user", "content": "What is the weather like in Boston?"},
+{"role": "assistant", "content": null, "function_call": {"name": "get_current_weather", "arguments": "{ \"location\": \"Boston, MA\"}"}},
+{"role": "function", "name": "get_current_weather", "content": "{\"temperature\": "22", \"unit\": \"celsius\", \"description\": \"Sunny\"}"}
+],
+"functions": [
+{
+"name": "get_current_weather",
+"description": "Get the current weather in a given location",
+"parameters": {
+"type": "object",
+"properties": {
+"location": {
+"type": "string",
+"description": "The city and state, e.g. San Francisco, CA"
+},
+"unit": {
+"type": "string",
+"enum": ["celsius", "fahrenheit"]
+}
+},
+"required": ["location"]
+}
+}
+]
+}
+> Final Result: The weather in Boston is currently sunny with a temperature of 22 degrees Celsius.
+=====
+api
+POST
+Chat Completion
+const url = 'https://chat-gpt26.p.rapidapi.com/';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'chat-gpt26.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+model: 'gpt-3.5-turbo',
+messages: [
+{
+role: 'user',
+content: 'Hello'
+}
+]
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

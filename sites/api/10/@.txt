@@ -1,0 +1,84 @@
+https://rapidapi.com/zfcsoftware/api/gmail-username-availability-check
+Gmail Username Availability Check
+API creator
+ZFC SOFTWARE
+subscribers
+419 subs
+category
+Email
+resources
+Terms of Use
+===pricing
+Basic
+$0.00
+/mo
+Requests
+15 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$1.00
+/mo
+Requests
+1.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Ultra
+⭐️
+Recommended
+$10.00
+/mo
+Requests
+60.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Mega
+$25.00
+/mo
+Requests
+200.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+Ychecker does not give a definitive result whether you can get an email address. However, this api is 100% accurate if you can get a gmail username. It never fails. It queries and returns this process in as little as 1 second. asdasd123@gmail.com An email address, for example. In just 1 second you can check if this mail can be received. The api only works for gmail and is accurate without exception.
+This api gives a 100% accurate result whether a Gmail username can be retrieved or not. The results are precise and error-free. We are assertive about this! Very fast and cheap.
+{
+code:200
+message:"User name can be taken. You can save this user name."
+}
+This is how you will receive a response when you submit a request.
+200 => This username can be saved. It has not been taken before.
+201 => This username is in use. It cannot be taken.
+500, 400=> An error occurred (returned with the error message variable)
+=====
+api
+POST
+Gmail username retrievability check
+const url = 'https://gmail-username-availability-check.p.rapidapi.com/gusername';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'gmail-username-availability-check.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+username: 'usernameCheck21432232'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

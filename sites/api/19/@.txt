@@ -1,0 +1,98 @@
+https://rapidapi.com/layered-layered-default/api/domains-api
+Domains API
+API creator
+Layered
+subscribers
+135 subs
+category
+Data
+resources
+Product Website https://dmns.app/
+===pricing
+Basic
+$0.00
+/mo
+Requests
+1.000 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$5.00
+/mo
+Requests
+50.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Ultra
+$10.00
+/mo
+Requests
+200.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+DNS, WHOIS and history for any domain on the internet, in JSON format
+Curious to see what Domains API can do for you? Try it out now and explore its features, experiment with different endpoints, and see the results firsthand.
+=====
+api
+GET
+Domain Info
+const url = 'https://domains-api.p.rapidapi.com/domains/exmaple.com?mode=detailed';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'domains-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Domain DNS Records
+const url = 'https://domains-api.p.rapidapi.com/domains/rapidapi.com/dns-records';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'domains-api.p.rapidapi.com',
+Accept: 'application/json'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Domain WHOIS
+const url = 'https://domains-api.p.rapidapi.com/domains/example.com/whois?follow=1';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'domains-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

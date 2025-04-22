@@ -1,0 +1,176 @@
+https://rapidapi.com/generateai-generateai-default/api/ai-video-generate-runwayml1
+AI Video Generate RunwayML
+API creator
+GenerateAI
+subscribers
+1778 subs
+category
+Artificial Intelligence/Machine Learning
+===pricing
+Basic
+$0.00
+/mo
+Generate Video
+3 / Month
+Hard Limit
+Requests
+100 / Month
+Hard Limit
+Features
+Early Access to New Features
+Support
+Rate Limit
+1000 requests per hour
+Request Access
+Pro
+⭐️
+Recommended
+$19.99
+/mo
+Generate Video
+100 / Month
++ $0.25
+Requests
+20.000 / Month
+Hard Limit
+Features
+Early Access to New Features
+Support
+Rate Limit
+10 requests per second
+Choose This Plan
+Ultra
+$39.99
+/mo
+Generate Video
+200 / Month
++ $0.25
+Requests
+40.000 / Month
+Hard Limit
+Features
+Early Access to New Features
+Support
+Rate Limit
+10 requests per second
+Choose This Plan
+Mega
+$99.99
+/mo
+Generate Video
+600 / Month
++ $0.2
+Requests
+350.000 / Month
+Hard Limit
+Features
+Early Access to New Features
+Support
+Rate Limit
+10 requests per second
+Choose This Plan
+====
+API Overview
+API For AI Video Generation With RunwayML
+🎥 AI Video Generation API with RunwayML
+Welcome to the AI Video Generation API documentation! This API empowers you to create stunning, AI-driven videos based on descriptive prompts, images, or both using RunwayML. 🚀✨
+=====
+api
+POST
+Generate Video by Text
+const url = 'https://ai-video-generate-runwayml1.p.rapidapi.com/text-to-video';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'ai-video-generate-runwayml1.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+text_prompt: 'masterpiece, cinematic, woman in a red dress walking through a rainy city street, reflections on wet pavement, soft glowing streetlights',
+width: 1344,
+height: 768,
+motion: 5,
+time: 5
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+POST
+Generate Video by Image
+const url = 'https://ai-video-generate-runwayml1.p.rapidapi.com/image-to-video';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'ai-video-generate-runwayml1.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+img_prompt: 'https://files.generate.tr/mammoth.jpeg',
+width: 1344,
+height: 768,
+motion: 5,
+time: 5
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+POST
+Generate Video by Image And Description
+const url = 'https://ai-video-generate-runwayml1.p.rapidapi.com/image-description-to-video';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'ai-video-generate-runwayml1.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+text_prompt: 'Mammoth',
+img_prompt: 'https://files.generate.tr/mammoth.jpeg',
+width: 1344,
+height: 768,
+motion: 5,
+seed: 0,
+time: 10
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Get Video Generation Status
+const url = 'https://ai-video-generate-runwayml1.p.rapidapi.com/status/3fa85f64-5717-4562-b3fc-2c963f66afa6';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'ai-video-generate-runwayml1.p.rapidapi.com',
+'Content-Type': 'application/json'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

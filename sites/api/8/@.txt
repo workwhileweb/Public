@@ -1,0 +1,82 @@
+https://rapidapi.com/calvinloveland335703-0p6BxLYIH8f/api/temp-mail44
+Temp Mail
+API creator
+Loveland Calvin
+subscribers
+4550 subs
+category
+Email
+===pricing
+Basic
+$0.00
+/mo
+Requests
+100 / Day
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$10.00
+/mo
+Requests
+1.000 / Day
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Ultra
+$30.00
+/mo
+Requests
+Unlimited
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+Create a temp mail to receive new email
+Create a temp mail
+Curious to see what Temp Mail can do for you? Try it out now and explore its features, experiment with different endpoints, and see the results firsthand.
+=====
+api
+POST
+Create an email
+const url = 'https://temp-mail44.p.rapidapi.com/api/v3/email/new';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'temp-mail44.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+key1: 'value',
+key2: 'value'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Read Inbox
+const url = 'https://temp-mail44.p.rapidapi.com/api/v3/email/p1amvpvxfh@bestparadize.com/messages';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'temp-mail44.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

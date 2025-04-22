@@ -1,0 +1,124 @@
+https://rapidapi.com/knitpay/api/knit-pay-pro1
+Knit Pay Pro
+API creator
+Knit Pay
+subscribers
+619 subs
+category
+Payments
+resources
+Product Website Terms of Use
+===pricing
+Basic
+$0.00
+/mo
+Successful Payments
+25 / Month
+Hard Limit
+Requests
+25 / Month
+Hard Limit
+Features
+Support
+Basic Support
+Integration Assistance
+Customization
+New Development
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$1.00
+/mo
+Successful Payments
+50 / Month
++ $0.036
+Requests
+500.000 / Month
++ $0.00003
+Features
+Support
+Enhanced Support
+Integration Assistance
+Customization
+New Development
+Rate Limit
+-
+Choose This Plan
+Ultra
+⭐️
+Recommended
+$10.00
+/mo
+Successful Payments
+500 / Month
++ $0.024
+Requests
+825.000 / Month
++ $0.00003
+Features
+Support
+Premium Support
+Integration Assistance
+Customization
+New Development
+Rate Limit
+-
+Choose This Plan
+Mega
+$50.00
+/mo
+Successful Payments
+5.000 / Month
++ $0.012
+Requests
+2.150.000 / Month
++ $0.00003
+Features
+Support
+Elite Support
+Integration Assistance
+Customization
+New Development
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+Knit Pay WordPress plugin integrates 500+ Payment Gateways with 100+ WordPress plugins and Themes.
+This API adds support for many Knit Pay premium add-ons in Knit Pay Pro WordPress plugin.
+The Knit Pay Pro WordPress plugin requires this API to work. Subscribe to this API only if you are using the Knit Pay Pro WordPress plugin
+Knit Pay Pro WordPress Plugin
+Knit Pay Website
+Contact Us
+=====
+api
+POST
+Payment Success
+const url = 'https://knit-pay-pro1.p.rapidapi.com/payments/success';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'knit-pay-pro1.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+mode: 'live',
+gateway: 'string',
+payment_method: 'string',
+source: 'rapidapi-test',
+amount: '0',
+currency: 'INR',
+knitpay_version: '0.0.0.0',
+website_url: 'https://rapidapi.com',
+data: 'string'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

@@ -1,0 +1,87 @@
+https://rapidapi.com/DataCrawler/api/callapp
+CallApp
+API creator
+DataCrawler
+subscribers
+656 subs
+category
+Data
+===pricing
+Basic
+$0.00
+/mo
+Requests
+5 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$9.99
+/mo
+Requests
+1.500 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Ultra
+$49.99
+/mo
+Requests
+12.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Mega
+$150.00
+/mo
+Requests
+50.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+Find any phone number, have more information about your contacts & much more.
+For a caller ID, use the #1 API to identify names and view images. CallApp: Caller ID &amp; Block is the phone lookup API with 100% success rate. Utilise it to retrieve identities, social media accounts, and further details on any phone number globally, if they are available.
+Curious to see what CallApp can do for you? Try it out now and explore its features, experiment with different endpoints, and see the results firsthand.
+=====
+api
+GET
+Search Contact
+const url = 'https://callapp.p.rapidapi.com/api/v1/search?code=91&number=9763387172';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'callapp.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Get Country Code
+const url = 'https://callapp.p.rapidapi.com/api/v1/getCountryCode';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'callapp.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

@@ -1,0 +1,113 @@
+https://rapidapi.com/IRCTCAPI/api/google-translator9
+Google Translator
+API creator
+IRCTCAPI
+subscribers
+1865 subs
+category
+Text Analysis
+===pricing
+Basic
+$0.00
+/mo
+Requests
+1.000 / Month
+Hard Limit
+Rate Limit
+5 requests per second
+Start Free Plan
+Pro
+$10.00
+/mo
+Requests
+500.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Ultra
+$16.00
+/mo
+Requests
+1.000.000 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Mega
+$65.00
+/mo
+Requests
+Unlimited
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+Allows programatic integration with Google Translate. ... Cloud Translation can dynamically translate text between thousands of language pairs
+Google Translate is a multilingual neural machine translation service developed by Google to translate text
+Curious to see what Google Translator can do for you? Try it out now and explore its features, experiment with different endpoints, and see the results firsthand.
+=====
+api
+POST
+Detects
+const url = 'https://google-translator9.p.rapidapi.com/v2/detect';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'google-translator9.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {q: 'Ce mai faci?'}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+POST
+Translates
+const url = 'https://google-translator9.p.rapidapi.com/v2';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'google-translator9.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+q: 'The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza pyramid complex.',
+source: 'en',
+target: 'zh-CN',
+format: 'text'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Languages
+const url = 'https://google-translator9.p.rapidapi.com/v2/languages';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'google-translator9.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

@@ -1,0 +1,72 @@
+https://rapidapi.com/Glavier/api/domain-da-pa-check
+Domain DA - PA Check
+API creator
+Glavier
+subscribers
+1693 subs
+category
+Data
+tags
+===pricing
+Basic
+$0.00
+/mo
+Requests
+50 / Month
+Hard Limit
+Rate Limit
+3 requests per second
+Start Free Plan
+Pro
+$10.00
+/mo
+Requests
+2.500 / Month
+Hard Limit
+Rate Limit
+3 requests per second
+Choose This Plan
+Ultra
+$30.00
+/mo
+Requests
+15.000 / Month
+Hard Limit
+Rate Limit
+3 requests per second
+Choose This Plan
+Mega
+$100.00
+/mo
+Requests
+50.000 / Month
+Hard Limit
+Rate Limit
+5 requests per second
+Choose This Plan
+====
+API Overview
+The Domain DA-PA Check API is a powerful tool for developers and businesses to quickly and easily check the authority and credibility of a domain. With access to domain authority (DA) score, page authority (PA) score, backlink count, and moz rank information, the API provides a comprehensive overview of a domain's reputation and credibility.
+The DA score and PA score are key indicators of a domain's authority and influence in search engine rankings. The higher the DA and PA scores, the more likely a domain is to rank highly in search results. Backlink count refers to the number of other websites that link to the domain, which can also be an indicator of authority and credibility.
+Using the API is simple and intuitive, with a user-friendly query structure that allows for easy integration into existing systems. The data provided by the API is regularly updated and accurate, ensuring that businesses and developers have access to the most up-to-date information available.
+Domain authority score & page authority score, spam score, backlink count information.
+Curious to see what Domain DA - PA Check can do for you? Try it out now and explore its features, experiment with different endpoints, and see the results firsthand.
+=====
+api
+GET
+Domain DA - PA Check
+const url = 'https://domain-da-pa-check.p.rapidapi.com/?target=www.google.com';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'domain-da-pa-check.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

@@ -1,0 +1,84 @@
+https://rapidapi.com/ailabapi-ailabapi-default/api/cartoon-yourself
+Cartoon yourself
+API creator
+AILabTools
+subscribers
+1185 subs
+category
+Artificial Intelligence/Machine Learning
+resources
+Product Website
+Terms of Use
+===pricing
+Basic
+$0.00
+/mo
+Requests
+10 / Month
+Hard Limit
+Cartoon yourself
+10 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$9.90
+/mo
+Requests
+250 / Month
+Hard Limit
+Cartoon yourself
+250 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Ultra
+$99.90
+/mo
+Requests
+3.570 / Month
+Hard Limit
+Cartoon yourself
+3.570 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+Mega
+$299.90
+/mo
+Requests
+12.500 / Month
+Hard Limit
+Cartoon yourself
+12.500 / Month
+Hard Limit
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+The Cartoon Yourself API allows users to transform personal photos into captivating cartoon images and offers advanced artistic effects. By leveraging cutting-edge GAN technology, this API can convert faces and entire images into stunning 3D game styles, adding depth and spatial realism perfect for game expos, cosplay events, and large-scale gaming tournaments.
+=====
+api
+POST
+Cartoon yourself
+const url = 'https://cartoon-yourself.p.rapidapi.com/facebody/api/portrait-animation/portrait-animation';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'cartoon-yourself.p.rapidapi.com',
+'Content-Type': 'application/x-www-form-urlencoded'
+},
+body: new URLSearchParams({})
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

@@ -1,0 +1,233 @@
+https://rapidapi.com/q18616316343/api/open-alibaba-api
+Open Alibaba Api
+API creator
+Taobao/Tmall/1688 Open API
+subscribers
+105 subs
+category
+eCommerce
+===pricing
+Basic
+$0.00
+/mo
+Advanced Requests
+50 / Month
+Hard Limit
+Requests
+100 / Month
+Hard Limit
+Features
+Customer Support
++ Email Support
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$29.99
+/mo
+Advanced Requests
+1.100 / Day
++ $0.01
+Requests
+4.200 / Day
++ $0.005
+Features
+Customer Support
++ Email Support
+Rate Limit
+10 requests per second
+Choose This Plan
+Ultra
+$74.99
+/mo
+Advanced Requests
+2.800 / Day
++ $0.006
+Requests
+11.000 / Day
++ $0.002
+Features
+Customer Support
++ Email Support
+Rate Limit
+10 requests per second
+Choose This Plan
+Mega
+⭐️
+Recommended
+$149.99
+/mo
+Advanced Requests
+6.000 / Day
++ $0.0036
+Requests
+17.000 / Day
++ $0.001
+Features
+Customer Support
++ Email Support
+Rate Limit
+10 requests per second
+Choose This Plan
+====
+API Overview
+🎁1688(Alibaba) open platform, official cooperation interface, through which you can obtain 1688 (China's One Million Source Factory) product information in real time.
+🎁 Please use Chinese when calling the GET-1688 Keyword Search API. The results returned by our interface support multiple languages（Chinese, Traditional Chinese, English, Japanese, Korean, Russian, Vietnamese, French, Portuguese, Indonesian, Thai, Arabic）.
+🎁1688(阿里巴巴)开放平台，官方合作接口，通过它您可以实时获取1688（中国百万源工厂）产品信息。
+🎁 调用GET-1688关键字搜索API时请使用中文。我们的接口返回的结果支持多种语言（中文、繁体中文、英语、日语、韩语、俄语、越南语、法语、葡萄牙语、印尼语、泰语、阿拉伯语）。
+If you would like to receive technical support, subscribe to higher-tier ports, increase usage limits, or request procurement services, please contact us！
+WeChat:openapi2019 WhatsApp:+8618820777181 Email:18820777181@163.com
+如果想获得技术支持，订阅更高级的端口以及使用次数，需求采购服务，请联系我们!
+WeChat:openapi2019 WhatsApp:+8618820777181 Email:18820777181@163.com
+🎁1688(Alibaba) is a direct sales platform for factory goods under Alibaba Group. The platform collects a large amount of product information and provides merchants with a wealth of product selection space. As of December 9, 2023, the number of merchant members on the 1688 website has exceeded 1 million, setting a record high. Among them, source factories accounted for 60%, and the number also reached a record high. This data fully demonstrates the agglomeration effect of the 1688 website in the Chinese e-commerce market and its huge user group size.
+🎁1688(Alibaba) is a direct sales platform for factory goods under Alibaba Group. The platform collects a large amount of product information and provides merchants with a wealth of product selection space. As of December 9, 2023, the number of merchant members on the 1688 website has exceeded 1 million, setting a record high. Among them, source factories accounted for 60%, and the number also reached a record high. This data fully demonstrates the agglomeration effect of the 1688 website in the Chinese e-commerce market and its huge user group size.
+🎁1688(Alibaba) open platform, official cooperation interface, through which you can obtain 1688 (China's One Million Source Factory) product information in real time.
+🎁 Please use Chinese when calling the GET-1688 Keyword Search API. The results returned by our interface support multiple languages（Chinese, Traditional Chinese, English, Japanese, Korean, Russian, Vietnamese, French, Portuguese, Indonesian, Thai, Arabic）.
+🎁1688是阿里巴巴集团旗下的工厂货直销平台。平台收集了大量的商品信息，为商家提供了丰富的商品选择空间。截至2023年12月9日，1688网站商户会员数量已突破100万，创下历史新高。其中，源头工厂占比60%，数量也创历史新高。这一数据充分展现了1688网站在中国电子商务市场的集聚效应及其庞大的用户群体规模。
+🎁1688(阿里巴巴)开放平台，官方合作接口，通过它您可以实时获取1688（中国百万源工厂）产品信息。
+🎁 调用GET-1688关键字搜索API时请使用中文。我们的接口返回的结果支持多种语言（中文、繁体中文、英语、日语、韩语、俄语、越南语、法语、葡萄牙语、印尼语、泰语、阿拉伯语）。
+If you would like to receive technical support, subscribe to higher-tier ports, increase usage limits, or request procurement services, please contact us！
+WeChat:openapi2019 WhatsApp:+8618820777181 Email:18820777181@163.com
+如果想获得技术支持，订阅更高级的端口以及使用次数，需求采购服务，请联系我们!
+WeChat:openapi2019 WhatsApp:+8618820777181 Email:18820777181@163.com
+=====
+api
+GET
+1688 Upload Image API
+const url = 'https://open-alibaba-api.p.rapidapi.com/alibaba/upload/image?pic_url=https%3A%2F%2Fimg.alicdn.com%2Fbao%2Fuploaded%2Fi3%2F684174095%2FO1CN019WLF1n1g7YYWtonEu_!!0-item_pic.jpg';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'open-alibaba-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+1688 Image Search API
+const url = 'https://open-alibaba-api.p.rapidapi.com/alibaba/product/imageQuery?imageUrl=https%3A%2F%2Fcbu01.alicdn.com%2Fimg%2Fibank%2FO1CN01liGasH2JUhh6JH7c1_!!2204599425-0-cib.jpg_400x400q75.jpg&country=en&beginPage=1&pageSize=10';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'open-alibaba-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+1688 Keyword Search API
+const url = 'https://open-alibaba-api.p.rapidapi.com/alibaba/product/keywordQuery?keyword=%E8%A3%99%E5%AD%90&country=en&beginPage=1&pageSize=10&sort=%7B%22price%22%3A%22asc%22%7D';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'open-alibaba-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+1688 Shop Search API
+const url = 'https://open-alibaba-api.p.rapidapi.com/alibaba/product/shopQuery?sellerOpenId=BBBEjczPHMQ_zHE-67YyNGXyw&country=en&beginPage=1&pageSize=10&sort=%7B%22price%22%3A%22asc%22%7D';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'open-alibaba-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+1688 Detail Query API
+const url = 'https://open-alibaba-api.p.rapidapi.com/alibaba/product/queryProductDetail?offerId=691522650802&country=en';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'open-alibaba-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+1688 Category Query API
+const url = 'https://open-alibaba-api.p.rapidapi.com/alibaba/category/get?categoryID=0';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'open-alibaba-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+POST
+1688 Freight Estimate Query API
+const url = 'https://open-alibaba-api.p.rapidapi.com/alibaba/product/freightEstimate?categoryID=0';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'open-alibaba-api.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+offerId: 670291644950,
+toProvinceCode: '330000',
+toCityCode: '330100',
+toCountryCode: '330108',
+totalNum: 1,
+logisticsSkuNumModels: [
+{
+skuId: '4829152353068',
+number: 1
+}
+]
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

@@ -1,0 +1,135 @@
+https://rapidapi.com/reversecoders/api/flycaptcha
+flyCaptcha
+API creator
+reversecoders
+subscribers
+68543 subs
+category
+Social
+resources
+Product Website https://flycaptcha.com/
+===pricing
+Basic
+$0.00
+/mo
+Requests
+10 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$50.00
+/mo
+Requests
+15.000 / Day
++ $0.01
+Rate Limit
+5 requests per second
+Choose This Plan
+Ultra
+⭐️
+Recommended
+$300.00
+/mo
+Requests
+50.000 / Day
++ $0.01
+Rate Limit
+20 requests per second
+Choose This Plan
+Mega
+$1,500.00
+/mo
+Requests
+3.000.000 / Month
++ $0.01
+Rate Limit
+50 requests per second
+Choose This Plan
+====
+API Overview
+Automatic captcha solving service, stably support for a single customer with an average of millions of calls per day.
+The Service is highly maintained and up-to-date.
+🔭 Supported TikTok Captcha Types:
+Slide
+Rotate
+Same Object
+flyCaptcha is the ideal solution to build own services.
+In case you need a custom plan for higher-volume usage please send us a message on Telegram https://t.me/reversecoders
+💬 Contact:
+E-Mail: reversecoders@gmail.com Website: https://flycaptcha.com Telegram: https://t.me/reversecoders Github: https://github.com/reversecoderslab/flyCaptcha Gitlab: https://gitlab.com/reversecoders/flycaptcha Rapidapi: https://rapidapi.com/reversecoders/api/flycaptcha YouTube: https://www.youtube.com/watch?v=c2pP8WFGtUg
+The Number #1 TikTok Captcha Solving Service on RapidAPI. We provide a highly maintained, up-to-date and scalable API based solution for many possible use cases and applications. 🔥 Big announcement 🔥 : Since January 3rd, 2024, in addition to the Web Captcha Solver, we also support the full Captcha Solving and Verification Process for the TikTok Mobile App ‼️
+Curious to see what flyCaptcha can do for you? Try it out now and explore its features, experiment with different endpoints, and see the results firsthand.
+=====
+api
+POST
+Slide Solver
+const url = 'https://flycaptcha.p.rapidapi.com/captcha/tiktok/slide';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'flycaptcha.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+url1: 'https://p16-oec-captcha-sg.ibyteimg.com/tos-alisg-i-jt9k1oekl8-sg/d581668d9ec34ca9b6d752ac81d67a11~tplv-jt9k1oekl8-2.jpeg',
+url2: 'https://p16-oec-captcha-sg.ibyteimg.com/tos-alisg-i-jt9k1oekl8-sg/c90dd0166ad543bba6d74026d5ac5a13~tplv-jt9k1oekl8-1.png',
+proxy: ''
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+POST
+Rotate (Whirl) Solver
+const url = 'https://flycaptcha.p.rapidapi.com/captcha/tiktok/rotate';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'flycaptcha.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+url1: 'https://p16-rc-captcha-va.ibyteimg.com/tos-maliva-i-b4yrtqhy5a-us/e46d6e452cf04305ae05f9415756ae8d~tplv-b4yrtqhy5a-1.png',
+url2: 'https://p16-rc-captcha-va.ibyteimg.com/tos-maliva-i-b4yrtqhy5a-us/bd7df08a9ed142f2b08059abbb5ea09d~tplv-b4yrtqhy5a-1.png',
+proxy: ''
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+POST
+Same Objects (3d) Solver
+const url = 'https://flycaptcha.p.rapidapi.com/captcha/tiktok/objects';
+const options = {
+method: 'POST',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'flycaptcha.p.rapidapi.com',
+'Content-Type': 'application/json'
+},
+body: {
+url1: 'https://p19-rc-captcha-sg.ibyteimg.com/tos-alisg-i-749px8mig0-sg/3d_2385_d5ccba4e39434e14dbc8de75f4a3eece9a555ed1_1.jpg~tplv-749px8mig0-2.jpeg',
+proxy: ''
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

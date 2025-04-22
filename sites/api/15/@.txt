@@ -1,0 +1,169 @@
+https://rapidapi.com/emmanueldavidyou/api/social-media-video-downloader
+social media video downloader
+API creator
+Emmanuel David
+subscribers
+1874 subs
+category
+Social
+===pricing
+Basic
+$0.00
+/mo
+Requests
+300 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$5.99
+/mo
+Requests
+10.000 / Month
+Hard Limit
+Rate Limit
+3 requests per second
+Choose This Plan
+Ultra
+$25.00
+/mo
+Requests
+35.000 / Month
+Hard Limit
+Rate Limit
+4 requests per second
+Choose This Plan
+Mega
+$70.99
+/mo
+Requests
+100.000 / Month
++ $0.0007
+Rate Limit
+5 requests per second
+Choose This Plan
+====
+API Overview
+Get media info of FB, IG, TikTok and YT videos/reels
+Parameters:
+url: The URL of the social media video to download (required)
+filename: The desired filename for the downloaded video (optional)
+cookie: Your session cookie of the platform
+sourcehtml: The html string of the platform's post page
+Response:
+If successful:
+success: true indicates that the API was able to process the link successfully.
+message: The error message. null indicates that there was no error message.
+src_url: The media url provided.
+title: The title of the media post.
+author: Information about the video's author, including their ID and avatar.
+stats: Various statistics about the video, such as the number of likes, shares, comments, plays, and collect counts, as well as the video's duration.
+links: An array of links to the video in different qualities (e.g., 480p, 540p).
+picture: A link to the thumbnail image of the media post.
+images: An array of links to the images in the post.
+timeTaken: The time taken to process the request (in this case, 2860 milliseconds).
+r_id: A unique request ID.
+If not successful:
+success: false
+message: An error message indicating the reason for failure
+r_id: A unique request ID
+Note:
+The filename parameter is optional.
+If post contains multiple media, use the index number at the end of the quality values in the links to group/filter them.
+The links array in the response contains objects with different video qualities, and each object has a quality and link property.
+The links array may contain links with "render" or |"video_render" in their quality value, which may take longer to return a response if you want to download it(typically 10-60 seconds), due to server-side rendering. This delay is usually only experienced on the first request, as the API may cache the rendered video for subsequent requests. To know when the video is ready, make HEAD requests to the link, and wait until it returns a response. PS: The links are valid for 1 hour.
+The monitor link in the links array returns the rendering progress of "render" videos.
+The timeTaken property in the response indicates the time taken to process the request.
+The r_id property in the response is a unique request ID.
+=====
+api
+GET
+tiktok
+const url = 'https://social-media-video-downloader.p.rapidapi.com/smvd/get/tiktok?url=https%3A%2F%2Fwww.tiktok.com%2F%40ib_danfilm%2Fvideo%2F7243545417852407045';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'social-media-video-downloader.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+instagram
+const url = 'https://social-media-video-downloader.p.rapidapi.com/smvd/get/instagram?url=https%3A%2F%2Fwww.instagram.com%2Freel%2FCrbc9rsA_KV%2F%3Figshid%3DNTc4MTIwNjQ2YQ%3D%3D';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'social-media-video-downloader.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+facebook
+const url = 'https://social-media-video-downloader.p.rapidapi.com/smvd/get/facebook?url=https%3A%2F%2Fweb.facebook.com%2Freel%2F975590503451951';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'social-media-video-downloader.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+youtube
+const url = 'https://social-media-video-downloader.p.rapidapi.com/smvd/get/youtube?url=https%3A%2F%2Fyoutu.be%2F9kH_p8FhBZI';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'social-media-video-downloader.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+all
+const url = 'https://social-media-video-downloader.p.rapidapi.com/smvd/get/all?url=https%3A%2F%2Fwww.facebook.com%2Freel%2F975590503451951';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'social-media-video-downloader.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

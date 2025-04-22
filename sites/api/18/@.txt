@@ -1,0 +1,84 @@
+https://rapidapi.com/linuz/api/searx-search-api
+searX Search API
+API creator
+linuz
+subscribers
+109 subs
+category
+Search
+resources
+Product Website https://indianapi.in/
+===pricing
+Basic
+$0.00
+/mo
+Requests
+1.000 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$9.99
+/mo
+Requests
+10.000 / Day
++ $0.03
+Rate Limit
+-
+Choose This Plan
+Ultra
+$24.99
+/mo
+Requests
+25.000 / Day
++ $0.003
+Rate Limit
+-
+Choose This Plan
+Mega
+$49.99
+/mo
+Requests
+50.000 / Day
++ $0.03
+Rate Limit
+-
+Choose This Plan
+====
+API Overview
+searX is an opensource internet metasearch engine which aggregates results from more than 70 search services. Users are neither tracked nor profiled. searX can fetch search results from about 82 different engines. This includes major search engines and site-specific searches like Bing, Google, Reddit, Wikipedia, Yahoo, and Yandex.
+Search API
+GET /search
+Parameters
+q (required): The search query. This string is passed to external search services. Thus, SearXNG supports the syntax of each search service. For example, site:github.com SearXNG is a valid query for Google. However, if the query above is passed to any search engine which does not filter its results based on this syntax, you might not get the results you wanted.
+See more at Search syntax.
+format (required): [ json ] Output format of results. The format needs to be activated in search settings. [ ONLY JSON WORKS! Required in request ]
+categories (optional): Comma-separated list specifying the active search categories (see Configured Engines).
+engines (optional): Comma-separated list specifying the active search engines (see Configured Engines).
+language (default: from search settings): Code of the language.
+page (default: 1): Search page number.
+time_range (optional): [ day, month, year ] Time range of search for engines which support it. See if an engine supports time range search in the preferences page of an instance.
+results_on_new_tab (default: 0): [ 0, 1 ] Open search results in a new tab.
+image_proxy (default: from server settings): [ True, False ] Proxy image results through SearXNG.
+autocomplete (default: from search settings): [ google, dbpedia, duckduckgo, mwmbl, startpage, wikipedia, stract, swisscows, qwant ] Service which completes words as you type.
+safesearch (default: from search settings): [ 0, 1, 2 ] Filter search results of engines which support safe search. See if an engine supports safe search in the preferences page of an instance.
+=====
+api
+GET
+search
+const url = 'https://searx-search-api.p.rapidapi.com/search?q=DeGoogle&format=json';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'searx-search-api.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}

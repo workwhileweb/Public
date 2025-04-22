@@ -1,0 +1,90 @@
+"https://rapidapi.com/zayviusdigital/api/yt-search-and-download-mp3
+YT Search and Download MP3
+API creator
+DowJs Dev
+subscribers
+319 subs
+category
+Entertainment
+resources
+Terms of Use
+===pricing
+Basic
+$0.00
+/mo
+Requests
+50 / Month
+Hard Limit
+Rate Limit
+1000 requests per hour
+Start Free Plan
+Pro
+$5.00
+/mo
+Requests
+100.000 / Month
+Hard Limit
+Rate Limit
+5 requests per minute
+Choose This Plan
+Ultra
+⭐️
+Recommended
+$15.00
+/mo
+Requests
+350.000 / Month
+Hard Limit
+Rate Limit
+5 requests per minute
+Choose This Plan
+Mega
+$35.00
+/mo
+Requests
+42.000 / Day
+Hard Limit
+Rate Limit
+1 requests per second
+Choose This Plan
+====
+API Overview
+Explore and convert YouTube's music library into MP3 format swiftly with our API . Easily integrate and access diverse songs, enhance your music app, and delight users with top-quality audio.
+Curious to see what YT Search and Download MP3 can do for you? Try it out now and explore its features, experiment with different endpoints, and see the results firsthand.
+=====
+api
+GET
+Download Mp3
+const url = 'https://yt-search-and-download-mp3.p.rapidapi.com/mp3';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'yt-search-and-download-mp3.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}
+===
+GET
+Search
+const url = 'https://yt-search-and-download-mp3.p.rapidapi.com/search?q=Video%20Keywords&limit=10';
+const options = {
+method: 'GET',
+headers: {
+'x-rapidapi-key': '323be663ccmsh35173cb3c5403c2p10f08fjsnad5cf7b49fa9',
+'x-rapidapi-host': 'yt-search-and-download-mp3.p.rapidapi.com'
+}
+};
+try {
+const response = await fetch(url, options);
+const result = await response.text();
+console.log(result);
+} catch (error) {
+console.error(error);
+}"
