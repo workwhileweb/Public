@@ -1,6 +1,11 @@
 {
   "keys": [
     {
+      "key": "KIEN",
+      "used": true,
+      "device": "156496444821314"
+    },
+    {
       "key": "TOAN",
       "used": true,
       "device": "9619526121822"
